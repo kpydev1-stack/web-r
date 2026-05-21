@@ -334,9 +334,11 @@
     }
 
     .hero-photo {
+      aspect-ratio: 4 / 5;
       min-height: 472px;
       position: relative;
       overflow: hidden;
+      contain: paint;
       border-radius: var(--radius-xl);
       box-shadow: var(--shadow);
     }
@@ -438,13 +440,15 @@
 
     .image-stack img {
       width: 100%;
+      overflow: hidden;
+      contain: paint;
       object-fit: cover;
       border-radius: var(--radius-xl);
       box-shadow: var(--soft-shadow);
     }
 
-    .image-stack img:first-child { height: 570px; }
-    .image-stack img:last-child { height: 390px; margin-bottom: 32px; }
+    .image-stack img:first-child { aspect-ratio: 4 / 5; height: auto; }
+    .image-stack img:last-child { aspect-ratio: 4 / 5; height: auto; margin-bottom: 32px; }
 
     .story-card,
     .location-panel,
@@ -502,12 +506,13 @@
 
     .menu-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 18px;
     }
 
     .menu-card {
       overflow: hidden;
+      contain: paint;
       border: 1px solid rgba(23, 40, 30, 0.08);
       border-radius: var(--radius-lg);
       background: rgba(255, 255, 255, 0.76);
@@ -521,9 +526,11 @@
     }
 
     .menu-card figure {
-      height: 245px;
+      aspect-ratio: 4 / 3;
+      height: auto;
       margin: 0;
       overflow: hidden;
+      contain: paint;
       background: var(--sage);
     }
 
@@ -623,6 +630,7 @@
       justify-content: flex-end;
       position: relative;
       overflow: hidden;
+      contain: paint;
       isolation: isolate;
       border-radius: var(--radius-lg);
       color: var(--cream);
@@ -720,6 +728,7 @@
     .map-card {
       min-height: 620px;
       overflow: hidden;
+      contain: paint;
       border-radius: var(--radius-xl);
       box-shadow: var(--shadow);
       background: var(--sage);
@@ -818,7 +827,7 @@
       .hero-photo { min-height: 540px; }
       .stats-inner,
       .experience-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .menu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .menu-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
       .band-photo { min-height: 440px; }
       .cta-actions { justify-content: flex-start; }
     }
@@ -852,6 +861,18 @@
       .highlights-grid,
       .menu-grid,
       .footer-grid { grid-template-columns: 1fr; }
+      .menu-card {
+        display: grid;
+        grid-template-columns: minmax(118px, 36%) minmax(0, 1fr);
+        min-height: 152px;
+      }
+      .menu-card figure {
+        aspect-ratio: auto;
+        height: 100%;
+        min-height: 152px;
+      }
+      .menu-content { padding: 16px; }
+      .menu-card h3 { font-size: 1.05rem; }
       .hero-photo,
       .map-card,
       .map-card iframe { min-height: 430px; }
@@ -861,7 +882,6 @@
       .image-stack img:last-child { height: auto; margin: 0; }
       .menu-head { display: block; }
       .menu-filters { justify-content: flex-start; margin-top: 20px; }
-      .menu-card figure { height: 220px; }
       .feature-list li { display: block; }
       .feature-list li span { display: block; margin-top: 4px; }
       .mobile-bar { display: grid; }
@@ -938,13 +958,14 @@
       <div class="container split">
         <div class="image-stack" aria-hidden="true">
           <img src="assets/floral-interior.jpg" alt="Bright floral interior seating at Ryoku Cafe" />
-          <img src="assets/souffle-dessert.jpg" alt="Souffle pancake dessert plate at Ryoku Cafe" />
+          <img src="assets/toast-dessert.jpg" alt="Ryoku Cafe plated dessert and brunch detail" />
         </div>
         <div class="story-card">
           <span class="eyebrow">The story behind Ryoku</span>
           <h2 class="section-title">Cafe comfort, Japanese craft, Bangkok garden soul.</h2>
           <p class="section-lead">Ryoku began with friends, a Japanese chef and an Osaka souffle pancake recipe they wanted Bangkok to try. The cafe now blends modern Western comfort with Japanese inspiration inside a white garden house on Sukhumvit 35.</p>
           <p class="thai-copy">เรียวกุคาเฟ่นำเสนออาหาร Modern Western Cuisine with Japanese infusion โดยมี Souffle Pancake เป็นเอกลักษณ์ ทั้งเมนูคาวและหวาน พร้อมซอสหลากหลายที่ได้แรงบันดาลใจจากกลิ่นดอกไม้และรสผลไม้</p>
+          <p class="section-lead">The house is designed as a minimal-vintage oasis: garden paths, soft curtains, floral styling and calm corners for slow brunch, coffee and private moments.</p>
           <a class="btn btn-primary" href="#menu">Explore the Menu</a>
         </div>
       </div>
