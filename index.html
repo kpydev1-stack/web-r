@@ -24,8 +24,33 @@
       --petal: #eee9df;
       --gold: #d8d1c2;
       --line: rgba(16, 16, 15, 0.12);
+      --body-bg: #ffffff;
+      --surface: #ffffff;
+      --nav-glass: rgba(255, 253, 248, 0.9);
+      --pill-bg: #10100f;
+      --pill-text: #ffffff;
       --radius: 28px;
       --max: 1180px;
+    }
+
+    body[data-theme="night"] {
+      --ink: #f6f7ef;
+      --muted: #bec6b6;
+      --paper: #11140f;
+      --white: #161a14;
+      --soft: #22271f;
+      --ryoku: #25331f;
+      --ryoku-strong: #445536;
+      --accent: #dfead2;
+      --dark: #25331f;
+      --petal: #22271f;
+      --gold: #d5dfc5;
+      --line: rgba(246, 247, 239, 0.14);
+      --body-bg: #10130e;
+      --surface: #161a14;
+      --nav-glass: rgba(18, 22, 16, 0.88);
+      --pill-bg: #dfead2;
+      --pill-text: #10130e;
     }
 
     * { box-sizing: border-box; }
@@ -34,9 +59,10 @@
     body {
       margin: 0;
       color: var(--ink);
-      background: #ffffff;
+      background: var(--body-bg);
       font-family: Inter, "Noto Sans Thai", system-ui, sans-serif;
       overflow-x: hidden;
+      transition: background-color 360ms ease, color 360ms ease;
     }
 
     img { display: block; width: 100%; max-width: 100%; object-fit: cover; }
@@ -83,7 +109,7 @@
       transform: translateX(-50%);
       padding: 10px 12px;
       border: 1px solid rgba(16, 16, 15, 0.08);
-      background: rgba(255, 253, 248, 0.9);
+      background: var(--nav-glass);
       box-shadow: 0 18px 70px rgba(16, 16, 15, 0.12);
       backdrop-filter: blur(18px);
     }
@@ -127,7 +153,7 @@
       margin-left: auto;
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 10px;
       transition: margin-left 760ms cubic-bezier(.18,.86,.22,1), gap 520ms ease;
     }
 
@@ -161,13 +187,63 @@
     .pill-link:hover span + span { transform: translateY(0); }
 
     .pill-link {
-      color: var(--white);
-      background: var(--ink);
+      color: var(--pill-text);
+      background: var(--pill-bg);
       min-width: 126px;
       justify-content: center;
       box-shadow: 0 14px 34px rgba(16, 16, 15, 0.16);
     }
 
+    .nav-tools {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .lang-tabs {
+      display: inline-flex;
+      align-items: center;
+      height: 38px;
+      padding: 4px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      box-shadow: 0 12px 30px rgba(16, 16, 15, 0.08);
+    }
+
+    .lang-tab,
+    .theme-toggle {
+      border: 0;
+      cursor: pointer;
+      font-weight: 950;
+    }
+
+    .lang-tab {
+      min-width: 34px;
+      height: 30px;
+      border-radius: 999px;
+      background: transparent;
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+    }
+
+    .lang-tab.active {
+      color: var(--pill-text);
+      background: var(--pill-bg);
+    }
+
+    .theme-toggle {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 30px rgba(16, 16, 15, 0.08);
+    }
+
+    .mobile-panel-tools { display: none; }
     .mobile-toggle { display: none; }
 
     .hero {
@@ -199,6 +275,16 @@
     .hero h1 {
       font-size: clamp(3.1rem, 6.7vw, 6.8rem);
       max-width: 620px;
+    }
+
+    html[lang="ja"] .section-title,
+    html[lang="ja"] .visit-title,
+    html[lang="ja"] .quote-card h3,
+    html[lang="zh"] .section-title,
+    html[lang="zh"] .visit-title,
+    html[lang="zh"] .quote-card h3 {
+      letter-spacing: 0;
+      line-height: 1.05;
     }
 
     .hero-kicker {
@@ -426,7 +512,7 @@
     .tags span {
       padding: 9px 13px;
       border-radius: 999px;
-      background: #f1ede4;
+      background: var(--soft);
       color: var(--muted);
       font-size: 0.84rem;
       font-weight: 900;
@@ -558,7 +644,7 @@
     .visit-card p { margin: 0 0 22px; color: var(--muted); }
 
     .testimonials {
-      background: #ede7dc;
+      background: var(--ryoku);
       border-radius: 48px 48px 0 0;
       padding: 92px 0;
     }
@@ -699,7 +785,7 @@
         transform: translateX(-50%);
         padding: 10px 12px;
         border: 1px solid rgba(16, 16, 15, 0.08);
-        background: rgba(255, 253, 248, 0.9);
+        background: var(--nav-glass);
         box-shadow: 0 18px 70px rgba(16, 16, 15, 0.12);
         backdrop-filter: blur(18px);
       }
@@ -725,10 +811,19 @@
         left: 0;
         right: 0;
         display: grid;
+        gap: 8px;
         padding: 16px;
         border: 1px solid var(--line);
         border-radius: 26px;
-        background: var(--white);
+        background: var(--surface);
+      }
+      .desktop-lang { display: none; }
+      .mobile-panel-tools {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-top: 8px;
       }
       .hero-top,
       .intro,
@@ -751,7 +846,37 @@
       .site-nav { width: min(100% - 26px, var(--max)); }
       .hero { padding-top: 100px; }
       .hero h1 { font-size: clamp(2.8rem, 13vw, 4.3rem); }
-      .hero-media { min-height: 430px; }
+      .hero-media {
+        width: 100vw;
+        min-height: min(74vh, 560px);
+        margin-left: calc(50% - 50vw);
+        border-radius: 30px;
+      }
+      .hero-media img {
+        transform: scale(1.01);
+        object-position: center center;
+      }
+      .quote-card {
+        min-height: auto;
+        padding: 26px;
+      }
+      .quote-card h3 {
+        font-size: clamp(1.45rem, 7vw, 2.15rem);
+        line-height: 1.08;
+        letter-spacing: -0.02em;
+      }
+      html[lang="ja"] .quote-card h3,
+      html[lang="zh"] .quote-card h3 {
+        font-size: clamp(1.45rem, 6.7vw, 2rem);
+        line-height: 1.16;
+        letter-spacing: 0;
+      }
+      html[lang="ja"] .section-title,
+      html[lang="zh"] .section-title {
+        font-size: clamp(2.25rem, 11vw, 3.5rem);
+      }
+      .nav-actions { gap: 8px; }
+      .pill-link { min-width: 112px; padding-inline: 12px; }
       .intro,
       section,
       .testimonials { padding-block: 68px; }
@@ -772,12 +897,29 @@
     </a>
     <div class="nav-actions">
       <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
-        <a class="roll-link" href="#bestsellers"><span>Bestsellers</span><span>Bestsellers</span></a>
-        <a class="roll-link" href="#journal"><span>Journal</span><span>Journal</span></a>
-        <a class="roll-link" href="#whyus"><span>About</span><span>About</span></a>
-        <a class="roll-link" href="#visitus"><span>Visit us</span><span>Visit us</span></a>
+        <a class="roll-link" href="#bestsellers"><span data-i18n="nav_bestsellers">Bestsellers</span><span data-i18n="nav_bestsellers">Bestsellers</span></a>
+        <a class="roll-link" href="#journal"><span data-i18n="nav_journal">Journal</span><span data-i18n="nav_journal">Journal</span></a>
+        <a class="roll-link" href="#whyus"><span data-i18n="nav_about">About</span><span data-i18n="nav_about">About</span></a>
+        <a class="roll-link" href="#visitus"><span data-i18n="nav_visit">Visit us</span><span data-i18n="nav_visit">Visit us</span></a>
+        <div class="mobile-panel-tools">
+          <div class="lang-tabs" aria-label="Language tabs">
+            <button class="lang-tab" type="button" data-lang="en">EN</button>
+            <button class="lang-tab" type="button" data-lang="th">TH</button>
+            <button class="lang-tab" type="button" data-lang="ja">JP</button>
+            <button class="lang-tab" type="button" data-lang="zh">CN</button>
+          </div>
+        </div>
       </nav>
-      <a class="pill-link" href="tel:+66927726000"><span>Call Ryoku</span><span>Call Ryoku</span></a>
+      <div class="nav-tools desktop-lang">
+        <div class="lang-tabs" aria-label="Language tabs">
+          <button class="lang-tab" type="button" data-lang="en">EN</button>
+          <button class="lang-tab" type="button" data-lang="th">TH</button>
+          <button class="lang-tab" type="button" data-lang="ja">JP</button>
+          <button class="lang-tab" type="button" data-lang="zh">CN</button>
+        </div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to night mode">☾</button>
+      <a class="pill-link" href="tel:+66927726000"><span data-i18n="nav_call">Call Ryoku</span><span data-i18n="nav_call">Call Ryoku</span></a>
     </div>
     <button class="mobile-toggle" id="mobileToggle" aria-label="Open menu">☰</button>
   </header>
@@ -787,12 +929,12 @@
       <div class="hero-top">
         <div>
           <h1>Ryoku Cafe</h1>
-          <p class="hero-kicker">Warm, airy and quietly refined. A Sukhumvit garden house for souffle pancakes, brunch and small daily rituals.</p>
+          <p class="hero-kicker" data-i18n="hero_kicker">Bright, composed and quietly refined. A Sukhumvit garden house for souffle pancakes, brunch and slow cafe moments.</p>
         </div>
         <div>
           <div class="hero-actions">
-            <a class="pill-link" href="#bestsellers"><span>Bestsellers</span><span>Bestsellers</span></a>
-            <a class="roll-link" href="#visitus"><span>Visit the Cafe</span><span>Visit the Cafe</span></a>
+            <a class="pill-link" href="#bestsellers"><span data-i18n="nav_bestsellers">Bestsellers</span><span data-i18n="nav_bestsellers">Bestsellers</span></a>
+            <a class="roll-link" href="#visitus"><span data-i18n="hero_visit">Visit the Cafe</span><span data-i18n="hero_visit">Visit the Cafe</span></a>
           </div>
         </div>
       </div>
@@ -803,76 +945,76 @@
 
     <section class="intro page-shell" id="whyus">
       <div class="reveal">
-        <h2 class="section-title">Made for slow mornings and quiet afternoons</h2>
+        <h2 class="section-title" data-i18n="intro_title">Made for relaxed mornings and quiet afternoons</h2>
         <div class="lovers">
           <div class="avatar-row">
             <img src="ryokuphotos/image13.jpeg" alt="" />
             <img src="ryokuphotos/image7.jpeg" alt="" />
             <img src="ryokuphotos/image12.jpeg" alt="" />
           </div>
-          <span>Bangkok brunch lovers</span>
+          <span data-i18n="intro_lovers">Bangkok brunch lovers</span>
         </div>
       </div>
       <div class="feature-stack reveal">
         <article class="mini-card">
-          <h3>Osaka-style souffle</h3>
-          <p>Soft, airy pancakes prepared as the gentle signature of the house.</p>
+          <h3 data-i18n="mini_1_title">Osaka-style souffle</h3>
+          <p data-i18n="mini_1_copy">Soft pancakes prepared as the gentle signature of the house.</p>
         </article>
         <article class="mini-card">
-          <h3>Japanese-Western brunch</h3>
-          <p>Comfort plates, pasta, toast, coffee and seasonal desserts.</p>
+          <h3 data-i18n="mini_2_title">Japanese-Western brunch</h3>
+          <p data-i18n="mini_2_copy">Comfort plates, pasta, toast, coffee and seasonal desserts.</p>
         </article>
         <article class="mini-card">
-          <h3>Garden house calm</h3>
-          <p>A renovated two-floor white house near BTS Phrom Phong.</p>
+          <h3 data-i18n="mini_3_title">Garden house calm</h3>
+          <p data-i18n="mini_3_copy">A renovated two-floor white house near BTS Phrom Phong.</p>
         </article>
       </div>
     </section>
 
     <div class="marquee" aria-hidden="true">
       <div class="marquee-track">
-        <span>Ryoku relax time</span><span>Souffle pancakes</span><span>Garden brunch</span><span>Sukhumvit 35</span>
-        <span>Ryoku relax time</span><span>Souffle pancakes</span><span>Garden brunch</span><span>Sukhumvit 35</span>
+        <span data-i18n="marquee_1">Ryoku cafe time</span><span data-i18n="marquee_2">Souffle pancakes</span><span data-i18n="marquee_3">Garden brunch</span><span>Sukhumvit 35</span>
+        <span data-i18n="marquee_1">Ryoku cafe time</span><span data-i18n="marquee_2">Souffle pancakes</span><span data-i18n="marquee_3">Garden brunch</span><span>Sukhumvit 35</span>
       </div>
     </div>
 
     <section class="page-shell" id="bestsellers">
       <div class="section-head reveal">
         <div>
-          <p class="eyebrow">Our favorites</p>
-          <h2 class="section-title">A few of Ryoku's most loved rituals.</h2>
+          <p class="eyebrow" data-i18n="products_eyebrow">Our favorites</p>
+          <h2 class="section-title" data-i18n="products_title">A few of Ryoku's most loved orders.</h2>
         </div>
-        <p class="section-copy">Sweet, savory and refreshing favorites from the original Ryoku menu, reimagined in the same soft editorial flow as the reference.</p>
+        <p class="section-copy" data-i18n="products_copy">Sweet, savory and refreshing favorites from the Ryoku menu, arranged with a clean editorial flow.</p>
       </div>
       <div class="products">
         <article class="product-card reveal">
           <figure><img src="ryokuphotos/image1.jpeg" alt="Ryoku premium souffle pancake" /></figure>
           <div class="product-body">
             <div>
-              <h3>Ryoku's Premium</h3>
-              <p>Fluffy souffle pancakes with cream, fruit and a refined Ryoku finish.</p>
+              <h3 data-i18n="product_1_title">Ryoku's Premium</h3>
+              <p data-i18n="product_1_copy">Souffle pancakes with cream, fruit and a refined Ryoku finish.</p>
             </div>
-            <div class="tags"><span>Signature</span><span>Souffle</span><span>฿339</span></div>
+            <div class="tags"><span data-i18n="tag_signature">Signature</span><span data-i18n="tag_souffle">Souffle</span><span>฿339</span></div>
           </div>
         </article>
         <article class="product-card reveal">
           <figure><img src="ryokuphotos2/dirty.jpeg" alt="Ryoku dirty coffee" /></figure>
           <div class="product-body">
             <div>
-              <h3>Ryoku's Dirty Coffee</h3>
-              <p>A layered specialty coffee with a smooth, photogenic finish.</p>
+              <h3 data-i18n="product_2_title">Ryoku's Dirty Coffee</h3>
+              <p data-i18n="product_2_copy">A layered specialty coffee with a smooth, photogenic finish.</p>
             </div>
-            <div class="tags"><span>Coffee</span><span>Layered</span><span>฿175</span></div>
+            <div class="tags"><span data-i18n="tag_coffee">Coffee</span><span data-i18n="tag_layered">Layered</span><span>฿175</span></div>
           </div>
         </article>
         <article class="product-card reveal">
-          <figure><img src="ryokuphotos/image7.jpeg" alt="Parma melon toast with avocado cream" /></figure>
+          <figure><img src="assets/toast-dessert.jpg" alt="Parma melon toast with avocado cream" /></figure>
           <div class="product-body">
             <div>
-              <h3>Parma & Melon Toast</h3>
-              <p>Colorful toast with creamy avocado, fruit notes and delicate savory balance.</p>
+              <h3 data-i18n="product_3_title">Parma & Melon Toast</h3>
+              <p data-i18n="product_3_copy">Toast layered with Parma ham, melon, mint and creamy avocado.</p>
             </div>
-            <div class="tags"><span>Smorrebrod</span><span>Brunch</span><span>฿229</span></div>
+            <div class="tags"><span>Smorrebrod</span><span data-i18n="tag_brunch">Brunch</span><span>฿229</span></div>
           </div>
         </article>
       </div>
@@ -881,20 +1023,20 @@
     <section class="page-shell">
       <div class="section-head reveal">
         <div>
-          <p class="eyebrow">Why Ryoku</p>
-          <h2 class="section-title">A garden ritual in the middle of Bangkok.</h2>
+          <p class="eyebrow" data-i18n="why_eyebrow">Why Ryoku</p>
+          <h2 class="section-title" data-i18n="why_title">A garden pause in the middle of Bangkok.</h2>
         </div>
-        <p class="section-copy">Ryoku brings together Japanese-inspired pancake craft, modern cafe comfort and a setting made for slowing down.</p>
+        <p class="section-copy" data-i18n="why_copy">Ryoku brings together Japanese-inspired pancake craft, modern cafe comfort and a setting made for taking your time.</p>
       </div>
       <div class="why-grid">
         <article class="why-card reveal">
-          <h3>Simple details</h3>
-          <p>White house architecture, soft curtains, natural light and warm table textures.</p>
+          <h3 data-i18n="why_card_1_title">Simple details</h3>
+          <p data-i18n="why_card_1_copy">White house architecture, soft curtains, natural light and warm table textures.</p>
         </article>
         <article class="why-card featured reveal">
-          <h3>Open daily</h3>
+          <h3 data-i18n="why_card_2_title">Open daily</h3>
           <div class="counter">08:00-20:00</div>
-          <p>Visit for brunch, souffle pancakes and quiet afternoon coffee near BTS Phrom Phong.</p>
+          <p data-i18n="why_card_2_copy">Visit for brunch, souffle pancakes and afternoon coffee near BTS Phrom Phong.</p>
         </article>
         <figure class="why-card why-photo reveal">
           <img src="ryokuphotos2/image0.jpeg" alt="Ryoku Cafe exterior glass house" />
@@ -905,10 +1047,10 @@
     <section class="page-shell" id="photos">
       <div class="section-head reveal">
         <div>
-          <p class="eyebrow">Photos</p>
-          <h2 class="section-title">Windows, plates and bright corners.</h2>
+          <p class="eyebrow" data-i18n="photos_eyebrow">Photos</p>
+          <h2 class="section-title" data-i18n="photos_title">Windows, plates and bright corners.</h2>
         </div>
-        <p class="section-copy">A cleaner white page makes the new Ryoku photos stand out: exterior glass, crisp interiors, plated pancakes, coffee and seasonal dishes.</p>
+        <p class="section-copy" data-i18n="photos_copy">A cleaner white page makes the new Ryoku photos stand out: exterior glass, crisp interiors, plated pancakes, coffee and seasonal dishes.</p>
       </div>
       <div class="photo-gallery">
         <figure class="gallery-tile tall reveal"><img src="ryokuphotos2/image10.jpeg" alt="Ryoku Cafe garden terrace" /></figure>
@@ -916,10 +1058,10 @@
         <figure class="gallery-tile reveal"><img src="ryokuphotos2/image1.jpeg" alt="Ryoku Cafe garden seating" /></figure>
         <figure class="gallery-tile reveal"><img src="ryokuphotos2/image11.jpeg" alt="Ryoku Cafe floral window display" /></figure>
         <figure class="gallery-tile wide reveal"><img src="ryokuphotos2/image8.jpeg" alt="Guests enjoying Ryoku Cafe" /></figure>
-        <figure class="gallery-tile reveal"><img src="ryokuphotos2/dirty.jpeg" alt="Ryoku dirty coffee" /></figure>
         <figure class="gallery-tile reveal"><img src="ryokuphotos2/image2.jpeg" alt="Ryoku pasta dish" /></figure>
         <figure class="gallery-tile reveal"><img src="ryokuphotos2/image4.jpeg" alt="Ryoku souffle pancake preparation" /></figure>
         <figure class="gallery-tile reveal"><img src="ryokuphotos2/image7.jpeg" alt="Ryoku pumpkin soup" /></figure>
+        <figure class="gallery-tile reveal"><img src="assets/toast-dessert.jpg" alt="Parma melon toast" /></figure>
         <figure class="gallery-tile wide reveal"><img src="ryokuphotos2/image13.jpeg" alt="Ryoku illustrated cafe scene" /></figure>
       </div>
     </section>
@@ -927,37 +1069,37 @@
     <section class="page-shell" id="journal">
       <div class="section-head reveal">
         <div>
-          <p class="eyebrow">Journal</p>
-          <h2 class="section-title">Moments from the garden house.</h2>
+          <p class="eyebrow" data-i18n="journal_eyebrow">Journal</p>
+          <h2 class="section-title" data-i18n="journal_title">Stories from the garden house.</h2>
         </div>
-        <p class="section-copy">Small editorial stories built from Ryoku's real menu, cafe space and visit details.</p>
+        <p class="section-copy" data-i18n="journal_copy">Short notes that explain the menu, the house and how to plan a first visit.</p>
       </div>
       <div class="journal-grid">
         <article class="journal-card reveal">
           <figure><img src="ryokuphotos/image11.jpeg" alt="" /><img src="ryokuphotos2/image4.jpeg" alt="" /></figure>
-          <div class="journal-body"><h3>Why souffle pancakes feel different</h3><p>Soft texture, warm cream and a slower kind of dessert.</p><small>by Ryoku</small></div>
+          <div class="journal-body"><h3 data-i18n="journal_1_title">Why souffle pancakes feel different</h3><p data-i18n="journal_1_copy">Ryoku's pancakes are served tall and tender, with cream and fruit adding contrast instead of heaviness. They are best enjoyed fresh from the kitchen.</p><small data-i18n="journal_by">by Ryoku</small></div>
         </article>
         <article class="journal-card reveal">
-          <figure><img src="ryokuphotos2/image12.jpeg" alt="" /><img src="ryokuphotos2/hero.jpeg" alt="" /></figure>
-          <div class="journal-body"><h3>A renovated house in Sukhumvit 35</h3><p>How the space turns brunch into a small escape.</p><small>by Ryoku</small></div>
+          <figure><img src="ryokuphotos2/image12.jpeg" alt="" /><img src="ryokuphotos2/image3.jpeg" alt="" /></figure>
+          <div class="journal-body"><h3 data-i18n="journal_2_title">A renovated house in Sukhumvit 35</h3><p data-i18n="journal_2_copy">The cafe sits in a two-floor white house with garden seating, glass windows and soft curtains. It is close to BTS Phrom Phong, so it works for both planned brunch and quick coffee.</p><small data-i18n="journal_by">by Ryoku</small></div>
         </article>
         <article class="journal-card reveal">
-          <figure><img src="ryokuphotos2/dirty.jpeg" alt="" /><img src="ryokuphotos/image17.jpeg" alt="" /></figure>
-          <div class="journal-body"><h3>Coffee, yuzu and warm afternoons</h3><p>Refreshing drinks for Bangkok's soft golden hours.</p><small>by Ryoku</small></div>
+          <figure><img src="ryokuphotos2/dirty.jpeg" alt="" /><img src="assets/coffee-drinks.jpg" alt="" /></figure>
+          <div class="journal-body"><h3 data-i18n="journal_3_title">Coffee, yuzu and afternoon drinks</h3><p data-i18n="journal_3_copy">Dirty Coffee is a layered milk-and-espresso drink with a rich finish. For something lighter, seasonal refreshers pair well with toast, pasta and garden seating.</p><small data-i18n="journal_by">by Ryoku</small></div>
         </article>
         <article class="journal-card reveal">
-          <figure><img src="ryokuphotos2/image2.jpeg" alt="" /><img src="ryokuphotos2/image8.jpeg" alt="" /></figure>
-          <div class="journal-body"><h3>Brunch plates beyond dessert</h3><p>Japanese-Western comfort for a more complete cafe visit.</p><small>by Ryoku</small></div>
+          <figure><img src="ryokuphotos2/image2.jpeg" alt="" /><img src="assets/toast-dessert.jpg" alt="" /></figure>
+          <div class="journal-body"><h3 data-i18n="journal_4_title">Brunch plates beyond dessert</h3><p data-i18n="journal_4_copy">Ryoku is not only for pancakes. The menu also includes pasta, Parma and melon toast, soup and coffee, making it easy to build a full lunch or a lighter cafe stop.</p><small data-i18n="journal_by">by Ryoku</small></div>
         </article>
       </div>
     </section>
 
     <section class="visit page-shell" id="visitus">
-      <h2 class="visit-title reveal">Visit us</h2>
+      <h2 class="visit-title reveal" data-i18n="visit_title">Visit us</h2>
       <div class="visit-card reveal">
-        <h4>28 Sukhumvit 35, Bangkok, Thailand</h4>
-        <p>Open daily, 08:00 - 20:00. Near BTS Phrom Phong.</p>
-        <a class="pill-link" href="https://www.google.com/maps/search/?api=1&query=Ryoku%20Cafe%2028%20Sukhumvit%2035%20Bangkok" target="_blank" rel="noreferrer"><span>Get directions</span><span>Get directions</span></a>
+        <h4 data-i18n="visit_address">28 Sukhumvit 35, Bangkok, Thailand</h4>
+        <p data-i18n="visit_hours">Open daily, 08:00 - 20:00. Near BTS Phrom Phong.</p>
+        <a class="pill-link" href="https://www.google.com/maps/search/?api=1&query=Ryoku%20Cafe%2028%20Sukhumvit%2035%20Bangkok" target="_blank" rel="noreferrer"><span data-i18n="visit_directions">Get directions</span><span data-i18n="visit_directions">Get directions</span></a>
       </div>
     </section>
 
@@ -965,24 +1107,32 @@
       <div class="page-shell">
         <div class="section-head reveal">
           <div>
-            <p class="eyebrow">Words from regulars</p>
-            <h2 class="section-title">A few kind notes from the table.</h2>
+            <p class="eyebrow" data-i18n="testimonials_eyebrow">Words from guests</p>
+            <h2 class="section-title" data-i18n="testimonials_title">A few kind notes from the table.</h2>
           </div>
-          <p class="section-copy">A carousel-inspired section with the same simple controls and soft editorial feel.</p>
+          <p class="section-copy" data-i18n="testimonials_copy">Use the controls to browse more guest notes from brunch, coffee and garden visits.</p>
         </div>
         <div class="quote-wrap reveal">
           <div>
             <article class="quote-card active">
-              <h3>"The house, the pancakes, the glasshouse light — it feels calm before the first bite."</h3>
-              <p>Ariya P. · Brunch guest</p>
+              <h3 data-i18n="quote_1">"The house, the pancakes, the glasshouse light - it feels calm before the first bite."</h3>
+              <p data-i18n="quote_1_by">Ariya P. · Brunch guest</p>
             </article>
             <article class="quote-card">
-              <h3>"Ryoku is where I go when I want a cafe that feels polished without feeling stiff."</h3>
-              <p>Napat S. · Bangkok creative</p>
+              <h3 data-i18n="quote_2">"Ryoku is where I go when I want a cafe that feels polished without feeling stiff."</h3>
+              <p data-i18n="quote_2_by">Napat S. · Bangkok creative</p>
             </article>
             <article class="quote-card">
-              <h3>"The dirty coffee and souffle pancake combo is a perfect slow afternoon."</h3>
-              <p>Mina K. · Coffee regular</p>
+              <h3 data-i18n="quote_3">"The dirty coffee and souffle pancake combo is a perfect afternoon treat."</h3>
+              <p data-i18n="quote_3_by">Mina K. · Coffee regular</p>
+            </article>
+            <article class="quote-card">
+              <h3 data-i18n="quote_4">"The garden seats feel private, but the cafe is still easy to reach from Phrom Phong."</h3>
+              <p data-i18n="quote_4_by">Ploy T. · Weekend visitor</p>
+            </article>
+            <article class="quote-card">
+              <h3 data-i18n="quote_5">"Parma melon toast, coffee and a window table made it feel like a little Bangkok escape."</h3>
+              <p data-i18n="quote_5_by">Kenji M. · Cafe regular</p>
             </article>
           </div>
           <div class="quote-controls" aria-label="Testimonial controls">
@@ -996,25 +1146,25 @@
     <section class="page-shell" id="faq">
       <div class="faq-grid">
         <div class="reveal">
-          <p class="eyebrow">FAQ</p>
-          <h2 class="section-title">Before your first visit.</h2>
+          <p class="eyebrow" data-i18n="faq_eyebrow">FAQ</p>
+          <h2 class="section-title" data-i18n="faq_title">Before your first visit.</h2>
         </div>
         <div class="faq-list reveal">
           <article class="faq-item open">
-            <h4>What is Ryoku known for?</h4>
-            <p><span>Ryoku is known for Osaka-style souffle pancakes, Japanese-Western brunch, coffee and its garden house setting.</span></p>
+            <h4 data-i18n="faq_1_q">What is Ryoku known for?</h4>
+            <p><span data-i18n="faq_1_a">Ryoku is known for Osaka-style souffle pancakes, Japanese-Western brunch, coffee and its garden house setting.</span></p>
           </article>
           <article class="faq-item">
-            <h4>Where is the cafe?</h4>
-            <p><span>Ryoku Cafe is at 28 Sukhumvit 35, Bangkok, near BTS Phrom Phong.</span></p>
+            <h4 data-i18n="faq_2_q">Where is the cafe?</h4>
+            <p><span data-i18n="faq_2_a">Ryoku Cafe is at 28 Sukhumvit 35, Bangkok, near BTS Phrom Phong.</span></p>
           </article>
           <article class="faq-item">
-            <h4>What are the opening hours?</h4>
-            <p><span>The cafe is open daily from 08:00 to 20:00.</span></p>
+            <h4 data-i18n="faq_3_q">What are the opening hours?</h4>
+            <p><span data-i18n="faq_3_a">The cafe is open daily from 08:00 to 20:00.</span></p>
           </article>
           <article class="faq-item">
-            <h4>Can I call ahead?</h4>
-            <p><span>Yes. Call +66 9-2772-6000 for visit questions and reservations.</span></p>
+            <h4 data-i18n="faq_4_q">Can I call ahead?</h4>
+            <p><span data-i18n="faq_4_a">Yes. Call +66 9-2772-6000 for visit questions and reservations.</span></p>
           </article>
         </div>
       </div>
@@ -1025,24 +1175,24 @@
     <div class="page-shell footer-grid">
       <div>
         <div class="footer-logo">Ryoku<br />Cafe</div>
-        <p class="copyright">© Ryoku Cafe Bangkok. Concept website inspired by a Framer-style cafe template.</p>
+        <p class="copyright" data-i18n="footer_copyright">© Ryoku Cafe Bangkok. Concept website inspired by a Framer-style cafe template.</p>
       </div>
       <div class="footer-col">
-        <h4>Contact info</h4>
+        <h4 data-i18n="footer_contact">Contact info</h4>
         <a href="mailto:ryokucafe@gmail.com">ryokucafe@gmail.com</a>
         <a href="tel:+66927726000">+66 9-2772-6000</a>
       </div>
       <div class="footer-col">
-        <h4>Navigate</h4>
-        <a href="#bestsellers">Bestsellers</a>
-        <a href="#journal">Journal</a>
+        <h4 data-i18n="footer_navigate">Navigate</h4>
+        <a href="#bestsellers" data-i18n="nav_bestsellers">Bestsellers</a>
+        <a href="#journal" data-i18n="nav_journal">Journal</a>
         <a href="#faq">FAQ</a>
       </div>
       <div class="footer-col">
-        <h4>Social</h4>
+        <h4 data-i18n="footer_social">Social</h4>
         <a href="https://www.instagram.com/ryoku.cafe/" target="_blank" rel="noreferrer">Instagram</a>
         <a href="https://www.facebook.com/ryokucafe/" target="_blank" rel="noreferrer">Facebook</a>
-        <a href="https://line.me/R/ti/p/@ryoku.cafe" target="_blank" rel="noreferrer">Line</a>
+        <a href="https://line.me/R/ti/p/@ryokucafe" target="_blank" rel="noreferrer">LINE @ryokucafe</a>
       </div>
     </div>
   </footer>
@@ -1056,7 +1206,400 @@
     const quoteCards = document.querySelectorAll('.quote-card');
     const nextQuote = document.getElementById('nextQuote');
     const prevQuote = document.getElementById('prevQuote');
+    const themeToggle = document.getElementById('themeToggle');
+    const langButtons = document.querySelectorAll('[data-lang]');
     let quoteIndex = 0;
+
+    const translations = {
+      en: {
+        nav_bestsellers: 'Bestsellers',
+        nav_journal: 'Journal',
+        nav_about: 'About',
+        nav_visit: 'Visit us',
+        nav_call: 'Call Ryoku',
+        hero_kicker: 'Bright, composed and quietly refined. A Sukhumvit garden house for souffle pancakes, brunch and slow cafe moments.',
+        hero_visit: 'Visit the Cafe',
+        intro_title: 'Made for relaxed mornings and quiet afternoons',
+        intro_lovers: 'Bangkok brunch lovers',
+        mini_1_title: 'Osaka-style souffle',
+        mini_1_copy: 'Soft pancakes prepared as the gentle signature of the house.',
+        mini_2_title: 'Japanese-Western brunch',
+        mini_2_copy: 'Comfort plates, pasta, toast, coffee and seasonal desserts.',
+        mini_3_title: 'Garden house calm',
+        mini_3_copy: 'A renovated two-floor white house near BTS Phrom Phong.',
+        marquee_1: 'Ryoku cafe time',
+        marquee_2: 'Souffle pancakes',
+        marquee_3: 'Garden brunch',
+        products_eyebrow: 'Our favorites',
+        products_title: "A few of Ryoku's most loved orders.",
+        products_copy: 'Sweet, savory and refreshing favorites from the Ryoku menu, arranged with a clean editorial flow.',
+        product_1_title: "Ryoku's Premium",
+        product_1_copy: 'Souffle pancakes with cream, fruit and a refined Ryoku finish.',
+        product_2_title: "Ryoku's Dirty Coffee",
+        product_2_copy: 'A layered specialty coffee with a smooth, photogenic finish.',
+        product_3_title: 'Parma & Melon Toast',
+        product_3_copy: 'Toast layered with Parma ham, melon, mint and creamy avocado.',
+        tag_signature: 'Signature',
+        tag_souffle: 'Souffle',
+        tag_coffee: 'Coffee',
+        tag_layered: 'Layered',
+        tag_brunch: 'Brunch',
+        why_eyebrow: 'Why Ryoku',
+        why_title: 'A garden pause in the middle of Bangkok.',
+        why_copy: 'Ryoku brings together Japanese-inspired pancake craft, modern cafe comfort and a setting made for taking your time.',
+        why_card_1_title: 'Simple details',
+        why_card_1_copy: 'White house architecture, soft curtains, natural light and warm table textures.',
+        why_card_2_title: 'Open daily',
+        why_card_2_copy: 'Visit for brunch, souffle pancakes and afternoon coffee near BTS Phrom Phong.',
+        photos_eyebrow: 'Photos',
+        photos_title: 'Windows, plates and bright corners.',
+        photos_copy: 'A cleaner white page makes the new Ryoku photos stand out: exterior glass, crisp interiors, plated pancakes, coffee and seasonal dishes.',
+        journal_eyebrow: 'Journal',
+        journal_title: 'Stories from the garden house.',
+        journal_copy: 'Short notes that explain the menu, the house and how to plan a first visit.',
+        journal_1_title: 'Why souffle pancakes feel different',
+        journal_1_copy: "Ryoku's pancakes are served tall and tender, with cream and fruit adding contrast instead of heaviness. They are best enjoyed fresh from the kitchen.",
+        journal_2_title: 'A renovated house in Sukhumvit 35',
+        journal_2_copy: 'The cafe sits in a two-floor white house with garden seating, glass windows and soft curtains. It is close to BTS Phrom Phong, so it works for both planned brunch and quick coffee.',
+        journal_3_title: 'Coffee, yuzu and afternoon drinks',
+        journal_3_copy: 'Dirty Coffee is a layered milk-and-espresso drink with a rich finish. For something lighter, seasonal refreshers pair well with toast, pasta and garden seating.',
+        journal_4_title: 'Brunch plates beyond dessert',
+        journal_4_copy: 'Ryoku is not only for pancakes. The menu also includes pasta, Parma and melon toast, soup and coffee, making it easy to build a full lunch or a lighter cafe stop.',
+        journal_by: 'by Ryoku',
+        visit_title: 'Visit us',
+        visit_address: '28 Sukhumvit 35, Bangkok, Thailand',
+        visit_hours: 'Open daily, 08:00 - 20:00. Near BTS Phrom Phong.',
+        visit_directions: 'Get directions',
+        testimonials_eyebrow: 'Words from guests',
+        testimonials_title: 'A few kind notes from the table.',
+        testimonials_copy: 'Use the controls to browse more guest notes from brunch, coffee and garden visits.',
+        quote_1: '"The house, the pancakes, the glasshouse light - it feels calm before the first bite."',
+        quote_1_by: 'Ariya P. · Brunch guest',
+        quote_2: '"Ryoku is where I go when I want a cafe that feels polished without feeling stiff."',
+        quote_2_by: 'Napat S. · Bangkok creative',
+        quote_3: '"The dirty coffee and souffle pancake combo is a perfect afternoon treat."',
+        quote_3_by: 'Mina K. · Coffee regular',
+        quote_4: '"The garden seats feel private, but the cafe is still easy to reach from Phrom Phong."',
+        quote_4_by: 'Ploy T. · Weekend visitor',
+        quote_5: '"Parma melon toast, coffee and a window table made it feel like a little Bangkok escape."',
+        quote_5_by: 'Kenji M. · Cafe regular',
+        faq_eyebrow: 'FAQ',
+        faq_title: 'Before your first visit.',
+        faq_1_q: 'What is Ryoku known for?',
+        faq_1_a: 'Ryoku is known for Osaka-style souffle pancakes, Japanese-Western brunch, coffee and its garden house setting.',
+        faq_2_q: 'Where is the cafe?',
+        faq_2_a: 'Ryoku Cafe is at 28 Sukhumvit 35, Bangkok, near BTS Phrom Phong.',
+        faq_3_q: 'What are the opening hours?',
+        faq_3_a: 'The cafe is open daily from 08:00 to 20:00.',
+        faq_4_q: 'Can I call ahead?',
+        faq_4_a: 'Yes. Call +66 9-2772-6000 for visit questions and reservations.',
+        footer_copyright: '© Ryoku Cafe Bangkok. Concept website inspired by a Framer-style cafe template.',
+        footer_contact: 'Contact info',
+        footer_navigate: 'Navigate',
+        footer_social: 'Social'
+      },
+      th: {
+        nav_bestsellers: 'เมนูยอดนิยม',
+        nav_journal: 'เรื่องราว',
+        nav_about: 'เกี่ยวกับ',
+        nav_visit: 'แวะมาได้',
+        nav_call: 'โทรหา Ryoku',
+        hero_kicker: 'คาเฟ่บ้านสวนสีขาวในสุขุมวิท สำหรับซูเฟล่แพนเค้ก บรันช์ และช่วงเวลาสบายๆ ในคาเฟ่',
+        hero_visit: 'แวะมาที่คาเฟ่',
+        intro_title: 'สำหรับเช้าที่ผ่อนคลายและบ่ายที่เงียบสงบ',
+        intro_lovers: 'คนรักบรันช์ในกรุงเทพ',
+        mini_1_title: 'ซูเฟล่สไตล์โอซาก้า',
+        mini_1_copy: 'แพนเค้กเนื้อนุ่มที่เป็นซิกเนเจอร์ของร้าน',
+        mini_2_title: 'บรันช์ญี่ปุ่น-ตะวันตก',
+        mini_2_copy: 'พาสต้า โทสต์ กาแฟ และของหวานตามฤดูกาล',
+        mini_3_title: 'บ้านสวนที่สงบ',
+        mini_3_copy: 'บ้านสีขาวสองชั้นที่รีโนเวตใหม่ ใกล้ BTS พร้อมพงษ์',
+        marquee_1: 'เวลาคาเฟ่ของ Ryoku',
+        marquee_2: 'ซูเฟล่แพนเค้ก',
+        marquee_3: 'บรันช์ในสวน',
+        products_eyebrow: 'เมนูแนะนำ',
+        products_title: 'ออร์เดอร์ยอดนิยมของ Ryoku',
+        products_copy: 'เมนูหวาน คาว และเครื่องดื่มสดชื่นจาก Ryoku จัดวางในสไตล์สะอาดตา',
+        product_1_title: 'Ryoku Premium',
+        product_1_copy: 'ซูเฟล่แพนเค้กพร้อมครีม ผลไม้ และฟินิชแบบ Ryoku',
+        product_2_title: 'Dirty Coffee ของ Ryoku',
+        product_2_copy: 'กาแฟเลเยอร์นุ่มละมุน ถ่ายรูปสวย และดื่มง่าย',
+        product_3_title: 'Parma & Melon Toast',
+        product_3_copy: 'โทสต์พาร์มาแฮม เมลอน มิ้นต์ และอะโวคาโดครีม',
+        tag_signature: 'ซิกเนเจอร์',
+        tag_souffle: 'ซูเฟล่',
+        tag_coffee: 'กาแฟ',
+        tag_layered: 'เลเยอร์',
+        tag_brunch: 'บรันช์',
+        why_eyebrow: 'ทำไมต้อง Ryoku',
+        why_title: 'พื้นที่พักใจในสวนกลางกรุงเทพ',
+        why_copy: 'Ryoku รวมงานคราฟต์แพนเค้ก กลิ่นอายญี่ปุ่น และบรรยากาศคาเฟ่ที่ทำให้คุณค่อยๆ ใช้เวลา',
+        why_card_1_title: 'รายละเอียดเรียบง่าย',
+        why_card_1_copy: 'บ้านสีขาว ผ้าม่านนุ่ม แสงธรรมชาติ และพื้นผิวโต๊ะที่อบอุ่น',
+        why_card_2_title: 'เปิดทุกวัน',
+        why_card_2_copy: 'แวะมาทานบรันช์ ซูเฟล่แพนเค้ก และกาแฟยามบ่ายใกล้ BTS พร้อมพงษ์',
+        photos_eyebrow: 'รูปภาพ',
+        photos_title: 'หน้าต่าง จานอาหาร และมุมสว่าง',
+        photos_copy: 'พื้นหลังสีขาวช่วยให้รูปใหม่ของ Ryoku โดดเด่น ทั้งตัวบ้าน อาหาร กาแฟ และเมนูตามฤดูกาล',
+        journal_eyebrow: 'เรื่องราว',
+        journal_title: 'เรื่องเล่าจากบ้านสวน',
+        journal_copy: 'โน้ตสั้นๆ ที่ช่วยอธิบายเมนู พื้นที่ร้าน และการวางแผนมาเยือนครั้งแรก',
+        journal_1_title: 'ทำไมซูเฟล่แพนเค้กจึงต่างออกไป',
+        journal_1_copy: 'แพนเค้กของ Ryoku เสิร์ฟทรงสูง เนื้อนุ่ม พร้อมครีมและผลไม้ที่ช่วยเพิ่มรสสัมผัส ควรทานตอนเสิร์ฟใหม่ๆ',
+        journal_2_title: 'บ้านรีโนเวตในสุขุมวิท 35',
+        journal_2_copy: 'คาเฟ่อยู่ในบ้านสีขาวสองชั้น มีที่นั่งสวน หน้าต่างกระจก และผ้าม่านนุ่ม ใกล้ BTS พร้อมพงษ์ เหมาะทั้งบรันช์และกาแฟระหว่างวัน',
+        journal_3_title: 'กาแฟ ยูซุ และเครื่องดื่มยามบ่าย',
+        journal_3_copy: 'Dirty Coffee เป็นกาแฟนมเลเยอร์ที่เข้มและนุ่ม ส่วนเมนูสดชื่นตามฤดูกาลเข้ากับโทสต์ พาสต้า และที่นั่งในสวน',
+        journal_4_title: 'บรันช์ที่ไม่ใช่แค่ของหวาน',
+        journal_4_copy: 'Ryoku ไม่ได้มีแค่แพนเค้ก ยังมีพาสต้า Parma & Melon Toast ซุป และกาแฟ สำหรับมื้อกลางวันหรือคาเฟ่เบาๆ',
+        journal_by: 'โดย Ryoku',
+        visit_title: 'แวะมาได้',
+        visit_address: '28 สุขุมวิท 35 กรุงเทพฯ',
+        visit_hours: 'เปิดทุกวัน 08:00 - 20:00 ใกล้ BTS พร้อมพงษ์',
+        visit_directions: 'ดูเส้นทาง',
+        testimonials_eyebrow: 'เสียงจากลูกค้า',
+        testimonials_title: 'ข้อความดีๆ จากโต๊ะอาหาร',
+        testimonials_copy: 'ใช้ปุ่มเลื่อนเพื่ออ่านความประทับใจจากบรันช์ กาแฟ และมุมสวน',
+        quote_1: '"ตัวบ้าน แพนเค้ก และแสงจากกระจก ทำให้รู้สึกสงบตั้งแต่ก่อนทานคำแรก"',
+        quote_1_by: 'Ariya P. · ลูกค้าบรันช์',
+        quote_2: '"Ryoku คือคาเฟ่ที่ดูเรียบร้อยและพรีเมียม แต่ไม่รู้สึกเกร็ง"',
+        quote_2_by: 'Napat S. · ครีเอทีฟกรุงเทพ',
+        quote_3: '"Dirty Coffee คู่กับซูเฟล่แพนเค้กคือบ่ายที่ดีมาก"',
+        quote_3_by: 'Mina K. · ลูกค้ากาแฟ',
+        quote_4: '"ที่นั่งในสวนให้ความเป็นส่วนตัว แต่ยังเดินทางง่ายจากพร้อมพงษ์"',
+        quote_4_by: 'Ploy T. · ลูกค้าวันหยุด',
+        quote_5: '"Parma melon toast กาแฟ และโต๊ะริมหน้าต่าง ทำให้เหมือนได้พักจากกรุงเทพสักครู่"',
+        quote_5_by: 'Kenji M. · ลูกค้าประจำ',
+        faq_eyebrow: 'คำถาม',
+        faq_title: 'ก่อนมา Ryoku ครั้งแรก',
+        faq_1_q: 'Ryoku ขึ้นชื่อเรื่องอะไร?',
+        faq_1_a: 'Ryoku ขึ้นชื่อเรื่องซูเฟล่แพนเค้กสไตล์โอซาก้า บรันช์ญี่ปุ่น-ตะวันตก กาแฟ และบรรยากาศบ้านสวน',
+        faq_2_q: 'คาเฟ่อยู่ที่ไหน?',
+        faq_2_a: 'Ryoku Cafe อยู่ที่ 28 สุขุมวิท 35 กรุงเทพฯ ใกล้ BTS พร้อมพงษ์',
+        faq_3_q: 'เปิดกี่โมง?',
+        faq_3_a: 'เปิดทุกวัน 08:00 ถึง 20:00',
+        faq_4_q: 'โทรสอบถามได้ไหม?',
+        faq_4_a: 'ได้ โทร +66 9-2772-6000 สำหรับคำถามเรื่องการมาเยือนและการจอง',
+        footer_copyright: '© Ryoku Cafe Bangkok เว็บไซต์คอนเซ็ปต์ในสไตล์ Framer',
+        footer_contact: 'ติดต่อ',
+        footer_navigate: 'เมนู',
+        footer_social: 'โซเชียล'
+      },
+      ja: {},
+      zh: {}
+    };
+
+    translations.ja = {
+      ...translations.en,
+      nav_bestsellers: '人気メニュー',
+      nav_journal: 'ジャーナル',
+      nav_about: '紹介',
+      nav_visit: 'アクセス',
+      nav_call: 'Ryokuへ電話',
+      hero_kicker: 'スクンビットの白いガーデンハウス。スフレパンケーキ、ブランチ、ゆっくり過ごすカフェ時間に。',
+      hero_visit: 'カフェへ行く',
+      intro_title: 'ゆったりした朝と静かな午後のために',
+      intro_lovers: 'バンコクのブランチ好きへ',
+      mini_1_title: '大阪スタイルのスフレ',
+      mini_1_copy: '店のシグネチャーとして丁寧に仕上げる、やわらかなパンケーキ。',
+      mini_2_title: '和洋ブランチ',
+      mini_2_copy: 'パスタ、トースト、コーヒー、季節のデザートまで。',
+      mini_3_title: '静かなガーデンハウス',
+      mini_3_copy: 'BTSプロンポン近くの、改装された二階建ての白い家。',
+      marquee_1: 'Ryokuのカフェ時間',
+      marquee_2: 'スフレパンケーキ',
+      marquee_3: 'ガーデンブランチ',
+      products_eyebrow: 'おすすめ',
+      products_title: 'Ryokuで愛されるオーダー',
+      products_copy: '甘いもの、食事、爽やかなドリンクをすっきり見やすく紹介します。',
+      product_1_title: 'Ryoku Premium',
+      product_1_copy: 'クリームとフルーツを合わせた、Ryokuらしいスフレパンケーキ。',
+      product_2_title: 'RyokuのDirty Coffee',
+      product_2_copy: 'ミルクとエスプレッソの層が美しい、なめらかなスペシャルティコーヒー。',
+      product_3_title: 'パルマ＆メロントースト',
+      product_3_copy: 'パルマハム、メロン、ミント、アボカドクリームを重ねたトースト。',
+      tag_signature: 'シグネチャー',
+      tag_souffle: 'スフレ',
+      tag_coffee: 'コーヒー',
+      tag_layered: 'レイヤー',
+      tag_brunch: 'ブランチ',
+      why_eyebrow: 'Ryokuについて',
+      why_title: 'バンコク中心にある庭の休憩場所。',
+      why_copy: '日本らしいパンケーキの丁寧さと、モダンなカフェの居心地を合わせました。',
+      why_card_1_title: 'シンプルなディテール',
+      why_card_1_copy: '白い家、やわらかなカーテン、自然光、温かいテーブルの質感。',
+      why_card_2_title: '毎日営業',
+      why_card_2_copy: 'BTSプロンポン近くで、ブランチ、スフレパンケーキ、午後のコーヒーを。',
+      photos_eyebrow: '写真',
+      photos_title: '窓、料理、明るいコーナー。',
+      photos_copy: '白いページの上で、外観、インテリア、料理、コーヒー、季節のメニューが引き立ちます。',
+      journal_eyebrow: 'ジャーナル',
+      journal_title: 'ガーデンハウスからのストーリー。',
+      journal_copy: 'メニュー、空間、初めての来店のヒントを短く紹介します。',
+      journal_1_title: 'スフレパンケーキが特別に感じる理由',
+      journal_1_copy: 'Ryokuのパンケーキは高く、やわらかく、クリームとフルーツが軽やかなコントラストを添えます。キッチンから出たてがおすすめです。',
+      journal_2_title: 'Sukhumvit 35のリノベーションハウス',
+      journal_2_copy: '二階建ての白い家に、庭席、ガラス窓、やわらかなカーテン。BTSプロンポン近くで、ブランチにも短いコーヒーにも使いやすい場所です。',
+      journal_3_title: 'コーヒー、柚子、午後のドリンク',
+      journal_3_copy: 'Dirty Coffeeはミルクとエスプレッソの層があるリッチな一杯。軽めに楽しむなら、季節のリフレッシャーもおすすめです。',
+      journal_4_title: 'デザートだけではないブランチ',
+      journal_4_copy: 'Ryokuにはパンケーキだけでなく、パスタ、パルマ＆メロントースト、スープ、コーヒーもあります。',
+      journal_by: 'Ryokuより',
+      visit_title: 'アクセス',
+      visit_address: '28 Sukhumvit 35, Bangkok, Thailand',
+      visit_hours: '毎日営業 08:00 - 20:00。BTSプロンポン近く。',
+      visit_directions: '地図を見る',
+      testimonials_eyebrow: 'ゲストの声',
+      testimonials_title: 'テーブルからのうれしい声。',
+      testimonials_copy: 'ブランチ、コーヒー、庭での時間についての声を読めます。',
+      quote_1: '「家、パンケーキ、ガラスハウスの光。ひと口目の前から落ち着きます。」',
+      quote_1_by: 'Ariya P. · ブランチゲスト',
+      quote_2: '「Ryokuは上品なのに堅苦しくないカフェです。」',
+      quote_2_by: 'Napat S. · バンコクのクリエイター',
+      quote_3: '「Dirty Coffeeとスフレパンケーキの組み合わせは午後にぴったり。」',
+      quote_3_by: 'Mina K. · コーヒー常連',
+      quote_4: '「庭席はプライベート感があり、プロンポンからも行きやすいです。」',
+      quote_4_by: 'Ploy T. · 週末ゲスト',
+      quote_5: '「パルマメロントースト、コーヒー、窓際の席で小さなバンコクの休憩になりました。」',
+      quote_5_by: 'Kenji M. · カフェ常連',
+      faq_eyebrow: 'FAQ',
+      faq_title: '初めて来店する前に。',
+      faq_1_q: 'Ryokuは何で有名ですか？',
+      faq_1_a: '大阪スタイルのスフレパンケーキ、和洋ブランチ、コーヒー、ガーデンハウスの雰囲気で知られています。',
+      faq_2_q: 'カフェはどこですか？',
+      faq_2_a: 'Ryoku CafeはバンコクSukhumvit 35の28番地、BTSプロンポン近くにあります。',
+      faq_3_q: '営業時間は？',
+      faq_3_a: '毎日08:00から20:00まで営業しています。',
+      faq_4_q: '電話で問い合わせできますか？',
+      faq_4_a: '+66 9-2772-6000まで、来店や予約についてお問い合わせください。',
+      footer_copyright: '© Ryoku Cafe Bangkok. Framer風のコンセプトサイト。',
+      footer_contact: '連絡先',
+      footer_navigate: 'ナビゲーション',
+      footer_social: 'ソーシャル'
+    };
+
+    translations.zh = {
+      ...translations.en,
+      nav_bestsellers: '人气菜单',
+      nav_journal: '日志',
+      nav_about: '关于',
+      nav_visit: '到店',
+      nav_call: '致电 Ryoku',
+      hero_kicker: '位于素坤逸的白色花园咖啡屋，适合舒芙蕾松饼、早午餐和慢下来的咖啡时光。',
+      hero_visit: '到访咖啡馆',
+      intro_title: '为放松的早晨和安静的下午而设',
+      intro_lovers: '曼谷早午餐爱好者',
+      mini_1_title: '大阪风舒芙蕾',
+      mini_1_copy: '作为店内招牌制作的柔软松饼。',
+      mini_2_title: '日西式早午餐',
+      mini_2_copy: '舒适餐盘、意面、吐司、咖啡和季节甜点。',
+      mini_3_title: '安静的花园屋',
+      mini_3_copy: '靠近 BTS Phrom Phong 的两层白色改造房屋。',
+      marquee_1: 'Ryoku 咖啡时光',
+      marquee_2: '舒芙蕾松饼',
+      marquee_3: '花园早午餐',
+      products_eyebrow: '推荐',
+      products_title: 'Ryoku 最受欢迎的点单',
+      products_copy: '甜点、咸食与清爽饮品，以干净的编辑式版面呈现。',
+      product_1_title: 'Ryoku Premium',
+      product_1_copy: '搭配奶油和水果的舒芙蕾松饼，带有 Ryoku 的精致收尾。',
+      product_2_title: 'Ryoku Dirty Coffee',
+      product_2_copy: '层次分明的特色咖啡，口感顺滑，也很适合拍照。',
+      product_3_title: '帕尔马蜜瓜吐司',
+      product_3_copy: '帕尔马火腿、蜜瓜、薄荷与牛油果奶油叠成的吐司。',
+      tag_signature: '招牌',
+      tag_souffle: '舒芙蕾',
+      tag_coffee: '咖啡',
+      tag_layered: '分层',
+      tag_brunch: '早午餐',
+      why_eyebrow: '为什么选择 Ryoku',
+      why_title: '曼谷中心的一处花园停留。',
+      why_copy: 'Ryoku 将日式松饼工艺、现代咖啡馆舒适感和适合慢下来的空间结合在一起。',
+      why_card_1_title: '简洁细节',
+      why_card_1_copy: '白色房屋、柔软窗帘、自然光和温暖的桌面质感。',
+      why_card_2_title: '每日营业',
+      why_card_2_copy: '靠近 BTS Phrom Phong，适合早午餐、舒芙蕾松饼和下午咖啡。',
+      photos_eyebrow: '照片',
+      photos_title: '窗边、餐盘与明亮角落。',
+      photos_copy: '干净的白色页面让 Ryoku 的外观、室内、餐盘、咖啡和季节菜品更突出。',
+      journal_eyebrow: '日志',
+      journal_title: '来自花园小屋的故事。',
+      journal_copy: '用短文说明菜单、空间和第一次到访的小提示。',
+      journal_1_title: '为什么舒芙蕾松饼不一样',
+      journal_1_copy: 'Ryoku 的松饼高而柔软，奶油和水果带来轻盈对比。最好在刚出餐时享用。',
+      journal_2_title: 'Sukhumvit 35 的改造白屋',
+      journal_2_copy: '咖啡馆位于两层白色房屋中，有花园座位、玻璃窗和柔软窗帘。靠近 BTS Phrom Phong，适合早午餐或快速咖啡。',
+      journal_3_title: '咖啡、柚子和下午饮品',
+      journal_3_copy: 'Dirty Coffee 是牛奶与浓缩咖啡分层的浓郁饮品。想要清爽一点，季节饮品也很适合搭配吐司和花园座位。',
+      journal_4_title: '不只是甜点的早午餐',
+      journal_4_copy: 'Ryoku 不只有松饼，也有意面、帕尔马蜜瓜吐司、汤和咖啡，适合完整午餐或轻松咖啡时光。',
+      journal_by: 'Ryoku',
+      visit_title: '到店',
+      visit_address: '泰国曼谷 Sukhumvit 35 号 28',
+      visit_hours: '每日营业 08:00 - 20:00。近 BTS Phrom Phong。',
+      visit_directions: '查看路线',
+      testimonials_eyebrow: '客人留言',
+      testimonials_title: '餐桌旁的好评。',
+      testimonials_copy: '使用按钮浏览关于早午餐、咖啡和花园座位的评价。',
+      quote_1: '“白色房屋、松饼和玻璃屋的光线，让第一口之前就感到平静。”',
+      quote_1_by: 'Ariya P. · 早午餐客人',
+      quote_2: '“Ryoku 很精致，但不会让人觉得拘谨。”',
+      quote_2_by: 'Napat S. · 曼谷创意人',
+      quote_3: '“Dirty Coffee 配舒芙蕾松饼，是很完美的下午甜点。”',
+      quote_3_by: 'Mina K. · 咖啡常客',
+      quote_4: '“花园座位有私密感，又很容易从 Phrom Phong 到达。”',
+      quote_4_by: 'Ploy T. · 周末访客',
+      quote_5: '“帕尔马蜜瓜吐司、咖啡和窗边座位，让人像短暂逃离曼谷。”',
+      quote_5_by: 'Kenji M. · 咖啡馆常客',
+      faq_eyebrow: '常见问题',
+      faq_title: '第一次到访前。',
+      faq_1_q: 'Ryoku 以什么闻名？',
+      faq_1_a: 'Ryoku 以大阪风舒芙蕾松饼、日西式早午餐、咖啡和花园屋环境闻名。',
+      faq_2_q: '咖啡馆在哪里？',
+      faq_2_a: 'Ryoku Cafe 位于曼谷 Sukhumvit 35 号 28，靠近 BTS Phrom Phong。',
+      faq_3_q: '营业时间是？',
+      faq_3_a: '每日 08:00 至 20:00 营业。',
+      faq_4_q: '可以提前致电吗？',
+      faq_4_a: '可以。请拨打 +66 9-2772-6000 咨询到访和预约。',
+      footer_copyright: '© Ryoku Cafe Bangkok. Framer 风格概念网站。',
+      footer_contact: '联系方式',
+      footer_navigate: '导航',
+      footer_social: '社交'
+    };
+
+    function setLanguage(lang) {
+      const dictionary = translations[lang] || translations.en;
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-i18n]').forEach((node) => {
+        const key = node.dataset.i18n;
+        if (dictionary[key]) node.textContent = dictionary[key];
+      });
+      langButtons.forEach((button) => button.classList.toggle('active', button.dataset.lang === lang));
+      localStorage.setItem('ryoku-lang', lang);
+    }
+
+    function setTheme(theme) {
+      document.body.dataset.theme = theme;
+      const isNight = theme === 'night';
+      themeToggle.textContent = isNight ? '☀' : '☾';
+      themeToggle.setAttribute('aria-label', isNight ? 'Switch to day mode' : 'Switch to night mode');
+      localStorage.setItem('ryoku-theme', theme);
+    }
+
+    setLanguage(localStorage.getItem('ryoku-lang') || 'en');
+    setTheme(localStorage.getItem('ryoku-theme') || 'day');
+
+    langButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        setLanguage(button.dataset.lang);
+        navLinks.classList.remove('open');
+      });
+    });
+
+    themeToggle?.addEventListener('click', () => {
+      const nextTheme = document.body.dataset.theme === 'night' ? 'day' : 'night';
+      setTheme(nextTheme);
+    });
 
     function updateNavPosition() {
       const heroMedia = document.querySelector('.hero-media');
