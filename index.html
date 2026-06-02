@@ -3,1231 +3,1108 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ryoku Cafe Bangkok | Souffle Pancakes & Garden Cafe in Sukhumvit 35</title>
-  <meta name="description" content="Ryoku Cafe is a botanical Japanese-inspired cafe and bistro in Sukhumvit 35, Bangkok, known for fluffy souffle pancakes, brunch, coffee, seasonal drinks, and a peaceful garden-house atmosphere." />
-  <meta name="theme-color" content="#17281e" />
-  <meta property="og:title" content="Ryoku Cafe Bangkok" />
-  <meta property="og:description" content="Fluffy souffle pancakes, brunch, specialty drinks and a peaceful garden cafe experience in Sukhumvit 35." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ryokucafe.com/" />
-  <meta property="og:image" content="assets/garden-exterior.jpg" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2317281e'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-size='32' fill='%23fffaf2'%3E%E7%B7%91%3C/text%3E%3C/svg%3E" />
+  <title>Ryoku Cafe Bangkok | Garden House Cafe</title>
+  <meta name="description" content="Ryoku Cafe is a refined Japanese-Western garden house cafe in Sukhumvit 35, Bangkok, known for souffle pancakes, brunch, coffee and calm floral interiors." />
+  <meta name="theme-color" content="#f8f7f3" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2310100f'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-size='34' fill='%23fffdf8'%3E%E2%9C%A4%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Thai:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@500;600;700;800;900&family=Noto+Sans+Thai:wght@500;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --ink: #17281e;
-      --ink-soft: #263a2d;
-      --leaf: #596f55;
-      --sage: #edf2e8;
-      --cream: #fffaf2;
-      --cream-2: #f8f0df;
-      --petal: #f7e8df;
-      --clay: #ba6f4f;
-      --text: #20231f;
-      --muted: #697064;
+      --ink: #10100f;
+      --muted: #68635c;
+      --paper: #ffffff;
       --white: #ffffff;
-      --line: rgba(23, 40, 30, 0.1);
-      --shadow: 0 24px 80px rgba(23, 40, 30, 0.13);
-      --soft-shadow: 0 18px 52px rgba(23, 40, 30, 0.1);
-      --radius-xl: 12px;
-      --radius-lg: 8px;
-      --radius-md: 6px;
-      --container: 1180px;
+      --soft: #f4f4f2;
+      --ryoku: #dfead2;
+      --ryoku-strong: #c7d8b8;
+      --accent: #10100f;
+      --dark: #dfead2;
+      --petal: #eee9df;
+      --gold: #d8d1c2;
+      --line: rgba(16, 16, 15, 0.12);
+      --radius: 28px;
+      --max: 1180px;
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
-      color: var(--text);
-      background:
-        linear-gradient(180deg, #fffaf2 0%, #f6f0e4 38%, #edf2e8 100%);
-      font-family: Inter, "Noto Sans Thai", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      line-height: 1.65;
+      color: var(--ink);
+      background: #ffffff;
+      font-family: Inter, "Noto Sans Thai", system-ui, sans-serif;
       overflow-x: hidden;
     }
 
-    img { display: block; max-width: 100%; }
+    img { display: block; width: 100%; max-width: 100%; object-fit: cover; }
     a { color: inherit; text-decoration: none; }
-    button, input, textarea { font: inherit; }
-    p, h1, h2, h3 { margin-top: 0; }
+    button { font: inherit; color: inherit; }
 
-    .container {
-      width: min(var(--container), calc(100% - 40px));
-      margin-inline: auto;
+    .page-shell {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
     }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 14px;
-      color: var(--leaf);
-      font-size: 0.78rem;
-      font-weight: 900;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: var(--clay);
-      box-shadow: 12px 0 0 var(--leaf);
-    }
-
-    .section-title {
-      margin-bottom: 18px;
-      color: var(--ink);
-      font-family: "Playfair Display", "Noto Sans Thai", serif;
-      font-size: clamp(2.2rem, 5vw, 4.7rem);
-      line-height: 0.98;
-      letter-spacing: -0.05em;
-    }
-
-    .section-lead {
-      color: var(--muted);
-      font-size: clamp(1rem, 1.5vw, 1.15rem);
-      max-width: 700px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      min-height: 48px;
-      padding: 13px 20px;
-      border: 1px solid transparent;
-      border-radius: 999px;
-      font-weight: 900;
-      line-height: 1;
-      white-space: nowrap;
-      cursor: pointer;
-      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, color 180ms ease, border-color 180ms ease;
-    }
-
-    .btn:hover { transform: translateY(-2px); }
-
-    .btn-primary {
-      color: var(--cream);
-      background: var(--ink);
-      box-shadow: 0 16px 36px rgba(23, 40, 30, 0.25);
-    }
-
-    .btn-primary:hover { background: var(--ink-soft); }
-
-    .btn-secondary {
-      color: var(--ink);
-      background: rgba(255, 250, 242, 0.9);
-      border-color: var(--line);
-      box-shadow: 0 10px 26px rgba(23, 40, 30, 0.08);
-      backdrop-filter: blur(14px);
-    }
-
-    .btn-outline {
-      color: var(--ink);
-      background: transparent;
-      border-color: rgba(23, 40, 30, 0.16);
-    }
-
-    .btn-light {
-      color: var(--ink);
-      background: var(--cream);
-      border-color: rgba(255, 250, 242, 0.5);
-    }
-
-    .site-header {
-      position: sticky;
-      top: 0;
+    .site-nav {
+      position: fixed;
       z-index: 50;
-      background: rgba(255, 250, 242, 0.84);
-      border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(22px);
-    }
-
-    .nav {
-      min-height: 76px;
+      top: 28px;
+      left: 50%;
+      width: min(var(--max), calc(100% - 40px));
+      transform: translateX(-50%);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: 22px;
+      padding: 0;
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      box-shadow: none;
+      backdrop-filter: none;
+      transition:
+        top 760ms cubic-bezier(.18,.86,.22,1),
+        width 760ms cubic-bezier(.18,.86,.22,1),
+        padding 760ms cubic-bezier(.18,.86,.22,1),
+        background-color 520ms ease,
+        box-shadow 620ms ease,
+        border-color 520ms ease,
+        backdrop-filter 520ms ease;
+    }
+
+    .site-nav.scrolled {
+      top: 20px;
+      left: 50%;
+      right: auto;
+      width: min(760px, calc(100% - 60px));
+      transform: translateX(-50%);
+      padding: 10px 12px;
+      border: 1px solid rgba(16, 16, 15, 0.08);
+      background: rgba(255, 253, 248, 0.9);
+      box-shadow: 0 18px 70px rgba(16, 16, 15, 0.12);
+      backdrop-filter: blur(18px);
     }
 
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: 13px;
-      color: var(--ink);
-      font-weight: 900;
-      letter-spacing: -0.03em;
+      gap: 10px;
+      font-weight: 950;
+      letter-spacing: -0.04em;
     }
 
     .brand-mark {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
+      width: 32px;
+      height: 32px;
       display: grid;
       place-items: center;
-      color: var(--cream);
+      border-radius: 50%;
+      color: var(--white);
       background: var(--ink);
-      font-family: "Playfair Display", serif;
-      font-size: 1.3rem;
-      box-shadow: 0 10px 24px rgba(23, 40, 30, 0.2);
+      font-size: 1rem;
+      box-shadow: none;
+      transition: width 420ms ease, height 420ms ease, box-shadow 420ms ease;
     }
 
-    .brand small {
-      display: block;
-      margin-top: -4px;
-      color: var(--muted);
-      font-size: 0.7rem;
-      font-weight: 900;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
+    .site-nav.scrolled .brand-mark {
+      width: 42px;
+      height: 42px;
+      box-shadow: 0 10px 24px rgba(16, 16, 15, 0.18);
     }
 
     .nav-links {
       display: flex;
       align-items: center;
       gap: 6px;
-      color: var(--ink-soft);
-      font-size: 0.92rem;
       font-weight: 900;
+      font-size: 0.92rem;
     }
 
-    .nav-links a {
-      padding: 10px 12px;
-      border-radius: 999px;
-      transition: background 160ms ease;
+    .nav-actions {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: margin-left 760ms cubic-bezier(.18,.86,.22,1), gap 520ms ease;
     }
 
-    .nav-links a:hover { background: var(--sage); }
-
-    .nav-actions { display: flex; align-items: center; gap: 10px; }
-
-    .menu-toggle {
-      display: none;
-      width: 46px;
-      height: 46px;
-      border: 1px solid rgba(23, 40, 30, 0.14);
-      border-radius: 999px;
-      color: var(--ink);
-      background: var(--cream);
-      font-size: 1.25rem;
-      cursor: pointer;
+    .site-nav.scrolled .nav-actions {
+      margin-left: 18px;
     }
 
-    .hero { padding: 34px 0 80px; }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 0.96fr) minmax(360px, 0.78fr);
-      gap: 36px;
-      align-items: stretch;
-    }
-
-    .hero-copy {
-      min-height: 670px;
-      padding: clamp(28px, 6vw, 70px);
-      border-radius: var(--radius-xl);
-      background:
-        linear-gradient(145deg, rgba(255, 250, 242, 0.94), rgba(237, 242, 232, 0.9)),
-        url("assets/floral-interior.jpg") center / cover;
-      box-shadow: var(--shadow);
+    .roll-link,
+    .pill-link {
       position: relative;
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      display: inline-grid;
+      height: 38px;
+      align-items: center;
+      padding: 0 14px;
+      border-radius: 999px;
     }
 
-    .hero-copy::after {
-      content: "りょく";
-      position: absolute;
-      right: -18px;
-      bottom: -34px;
-      color: rgba(89, 111, 85, 0.08);
-      font-size: clamp(6rem, 18vw, 13rem);
-      font-weight: 900;
-      letter-spacing: -0.08em;
-      pointer-events: none;
+    .roll-link span,
+    .pill-link span {
+      grid-area: 1 / 1;
+      line-height: 1;
+      transition: transform 300ms cubic-bezier(.2,.8,.2,1);
+    }
+
+    .roll-link span + span,
+    .pill-link span + span { transform: translateY(220%); }
+    .roll-link:hover span:first-child,
+    .pill-link:hover span:first-child { transform: translateY(-220%); }
+    .roll-link:hover span + span,
+    .pill-link:hover span + span { transform: translateY(0); }
+
+    .pill-link {
+      color: var(--white);
+      background: var(--ink);
+      min-width: 126px;
+      justify-content: center;
+      box-shadow: 0 14px 34px rgba(16, 16, 15, 0.16);
+    }
+
+    .mobile-toggle { display: none; }
+
+    .hero {
+      min-height: 100svh;
+      padding: 164px 0 42px;
+      display: grid;
+      align-items: end;
+    }
+
+    .hero-top {
+      min-height: 218px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 40px;
+      align-items: end;
+      padding-bottom: 38px;
+    }
+
+    .hero h1,
+    .section-title,
+    .visit-title {
+      margin: 0;
+      font-family: "Archivo Black", Inter, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: -0.075em;
+      line-height: 0.88;
     }
 
     .hero h1 {
-      position: relative;
-      z-index: 1;
-      max-width: 820px;
-      margin-bottom: 22px;
-      color: var(--ink);
-      font-family: "Playfair Display", "Noto Sans Thai", serif;
-      font-size: clamp(3.3rem, 8.5vw, 8.45rem);
-      line-height: 0.84;
-      letter-spacing: -0.075em;
+      font-size: clamp(3.1rem, 6.7vw, 6.8rem);
+      max-width: 620px;
     }
 
-    .hero h1 span {
-      display: block;
-      margin-top: 12px;
-      color: var(--clay);
-      font-size: 0.58em;
-      font-style: italic;
-      letter-spacing: -0.04em;
-    }
-
-    .hero-text {
-      position: relative;
-      z-index: 1;
-      max-width: 650px;
-      margin-bottom: 28px;
-      color: var(--ink-soft);
-      font-size: clamp(1.05rem, 1.7vw, 1.26rem);
-    }
-
-    .hero-ctas {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 30px;
-    }
-
-    .hero-meta {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      max-width: 720px;
-    }
-
-    .meta-card {
-      padding: 14px 15px;
-      border: 1px solid rgba(23, 40, 30, 0.08);
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.66);
-      backdrop-filter: blur(16px);
-    }
-
-    .meta-card strong {
-      display: block;
-      color: var(--ink);
-      font-size: 0.92rem;
-    }
-
-    .meta-card span {
-      color: var(--muted);
-      font-size: 0.82rem;
-    }
-
-    .hero-visual {
-      min-height: 670px;
-      display: grid;
-      grid-template-rows: 1fr auto;
-      gap: 18px;
-    }
-
-    .hero-photo {
-      aspect-ratio: 4 / 5;
-      min-height: 472px;
-      position: relative;
-      overflow: hidden;
-      contain: paint;
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow);
-    }
-
-    .hero-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 700ms ease;
-    }
-
-    .hero-photo:hover img { transform: scale(1.035); }
-
-    .floating-note {
-      position: absolute;
-      left: 18px;
-      right: 18px;
-      bottom: 18px;
-      padding: 18px;
-      border-radius: 22px;
-      background: rgba(255, 250, 242, 0.9);
-      box-shadow: 0 14px 36px rgba(23, 40, 30, 0.14);
-      backdrop-filter: blur(20px);
-    }
-
-    .floating-note strong { display: block; color: var(--ink); }
-    .floating-note span { color: var(--muted); font-size: 0.92rem; }
-
-    .quick-card {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 18px;
-      align-items: center;
-      padding: 24px;
-      border-radius: var(--radius-lg);
-      color: var(--cream);
-      background: var(--ink);
-      box-shadow: var(--soft-shadow);
-    }
-
-    .quick-card span {
-      display: block;
-      margin-bottom: 4px;
-      opacity: 0.7;
-      font-size: 0.85rem;
-      font-weight: 900;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .quick-card strong { font-size: 1.3rem; }
-
-    .stats-strip {
-      margin-top: -34px;
-      position: relative;
-      z-index: 4;
-    }
-
-    .stats-inner {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 1px;
-      overflow: hidden;
-      border: 1px solid rgba(23, 40, 30, 0.08);
-      border-radius: var(--radius-lg);
-      background: rgba(23, 40, 30, 0.1);
-      box-shadow: var(--soft-shadow);
-    }
-
-    .stat {
-      padding: 24px;
-      background: rgba(255, 250, 242, 0.94);
-    }
-
-    .stat strong {
-      display: block;
-      color: var(--ink);
-      font-size: 1.28rem;
-      line-height: 1.1;
-    }
-
-    .stat span { color: var(--muted); font-size: 0.9rem; }
-
-    section { padding: 96px 0; }
-
-    .split {
-      display: grid;
-      grid-template-columns: 0.85fr 1fr;
-      gap: 54px;
-      align-items: center;
-    }
-
-    .image-stack {
-      display: grid;
-      grid-template-columns: 1fr 0.75fr;
-      gap: 16px;
-      align-items: end;
-    }
-
-    .image-stack img {
-      width: 100%;
-      overflow: hidden;
-      contain: paint;
-      object-fit: cover;
-      border-radius: var(--radius-xl);
-      box-shadow: var(--soft-shadow);
-    }
-
-    .image-stack img:first-child { aspect-ratio: 4 / 5; height: auto; }
-    .image-stack img:last-child { aspect-ratio: 4 / 5; height: auto; margin-bottom: 32px; }
-
-    .story-card,
-    .location-panel,
-    .review-card {
-      padding: clamp(26px, 4vw, 48px);
-      border: 1px solid rgba(23, 40, 30, 0.08);
-      border-radius: var(--radius-xl);
-      background: rgba(255, 255, 255, 0.66);
-      box-shadow: var(--soft-shadow);
-      backdrop-filter: blur(16px);
-    }
-
-    .thai-copy {
-      margin: 24px 0;
-      padding: 20px;
-      border-left: 4px solid var(--clay);
-      border-radius: 0 18px 18px 0;
-      color: var(--ink-soft);
-      background: var(--petal);
-      font-family: "Noto Sans Thai", sans-serif;
-    }
-
-    .menu-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 24px;
-      margin-bottom: 32px;
-    }
-
-    .menu-filters {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 10px;
-    }
-
-    .filter-btn {
-      padding: 10px 15px;
-      border: 1px solid rgba(23, 40, 30, 0.12);
-      border-radius: 999px;
-      color: var(--ink-soft);
-      background: rgba(255, 255, 255, 0.68);
-      font-weight: 900;
-      cursor: pointer;
-      transition: transform 160ms ease, background 160ms ease, color 160ms ease;
-    }
-
-    .filter-btn:hover,
-    .filter-btn.active {
-      color: var(--cream);
-      background: var(--ink);
-      transform: translateY(-1px);
-    }
-
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .menu-card {
-      overflow: hidden;
-      contain: paint;
-      border: 1px solid rgba(23, 40, 30, 0.08);
-      border-radius: var(--radius-lg);
-      background: rgba(255, 255, 255, 0.76);
-      box-shadow: 0 14px 46px rgba(23, 40, 30, 0.08);
-      transition: transform 190ms ease, box-shadow 190ms ease;
-    }
-
-    .menu-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 24px 70px rgba(23, 40, 30, 0.14);
-    }
-
-    .menu-card figure {
-      aspect-ratio: 4 / 3;
-      height: auto;
+    .hero-kicker {
+      max-width: 370px;
       margin: 0;
-      overflow: hidden;
-      contain: paint;
-      background: var(--sage);
+      color: var(--muted);
+      font-size: clamp(1rem, 1.5vw, 1.22rem);
+      line-height: 1.55;
     }
 
-    .menu-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .menu-content { padding: 22px; }
-
-    .tag-row {
+    .hero-actions {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      margin-bottom: 10px;
-    }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      border-radius: 999px;
-      padding: 6px 10px;
-      color: var(--leaf);
-      background: var(--sage);
-      font-size: 0.72rem;
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .price { color: var(--clay); font-weight: 900; white-space: nowrap; }
-
-    .menu-card h3 {
-      margin-bottom: 9px;
-      color: var(--ink);
-      font-size: 1.24rem;
-      line-height: 1.18;
-      letter-spacing: -0.025em;
-    }
-
-    .menu-card p { margin-bottom: 0; color: var(--muted); font-size: 0.95rem; }
-
-    [data-menu-item].hidden { display: none; }
-
-    .band {
-      display: grid;
-      grid-template-columns: 1fr 0.82fr;
-      overflow: hidden;
-      border-radius: var(--radius-xl);
-      color: var(--cream);
-      background: var(--ink);
-      box-shadow: var(--shadow);
-    }
-
-    .band-copy { padding: clamp(32px, 6vw, 70px); }
-    .band .section-title { color: var(--cream); }
-    .band .section-lead { color: rgba(255, 250, 242, 0.74); }
-
-    .feature-list {
-      display: grid;
-      gap: 12px;
-      margin: 28px 0 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .feature-list li {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(255, 250, 242, 0.14);
-    }
-
-    .feature-list strong { color: var(--white); }
-    .feature-list span { color: rgba(255, 250, 242, 0.68); }
-
-    .band-photo {
-      min-height: 560px;
-      background: url("assets/signature-pancake.jpg") center / cover;
-    }
-
-    .experience-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 34px;
-    }
-
-    .experience-card {
-      min-height: 280px;
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
       justify-content: flex-end;
+      gap: 14px;
+      margin-top: 38px;
+    }
+
+    .hero-media {
       position: relative;
       overflow: hidden;
-      contain: paint;
+      border-radius: var(--radius);
+      min-height: clamp(360px, 48vw, 620px);
+      background: var(--soft);
       isolation: isolate;
-      border-radius: var(--radius-lg);
-      color: var(--cream);
-      box-shadow: var(--soft-shadow);
-      background-position: center;
-      background-size: cover;
     }
 
-    .experience-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      background: linear-gradient(180deg, transparent 15%, rgba(23, 40, 30, 0.86));
+    .hero-media img {
+      height: 100%;
+      min-height: inherit;
+      transform: scale(1.06);
+      animation: gentleZoom 16s ease-in-out infinite alternate;
     }
 
-    .experience-card:nth-child(1) { background-image: url("assets/garden-exterior.jpg"); }
-    .experience-card:nth-child(2) { background-image: url("assets/floral-interior.jpg"); }
-    .experience-card:nth-child(3) { background-image: url("assets/toast-dessert.jpg"); }
-    .experience-card:nth-child(4) { background-image: url("assets/coffee-drinks.jpg"); }
-
-    .experience-card h3 { margin-bottom: 6px; font-size: 1.24rem; }
-    .experience-card p { margin-bottom: 0; color: rgba(255, 250, 242, 0.78); font-size: 0.94rem; }
-
-    .reviews { background: linear-gradient(180deg, rgba(237, 242, 232, 0.72), rgba(255, 250, 242, 0.42)); }
-
-    .review-grid {
+    .intro {
+      padding: 96px 0 58px;
       display: grid;
-      grid-template-columns: 0.75fr 1fr;
-      gap: 24px;
-      align-items: stretch;
-    }
-
-    .review-card strong.big {
-      display: block;
-      margin-bottom: 10px;
-      color: var(--ink);
-      font-family: "Playfair Display", serif;
-      font-size: clamp(3.3rem, 7vw, 6rem);
-      line-height: 1;
-      letter-spacing: -0.08em;
-    }
-
-    .highlights-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .highlight {
-      padding: 28px;
-      border: 1px solid rgba(23, 40, 30, 0.08);
-      border-radius: var(--radius-lg);
-      background: rgba(255, 255, 255, 0.76);
-      box-shadow: 0 14px 42px rgba(23, 40, 30, 0.07);
-    }
-
-    .highlight h3 { margin-bottom: 8px; color: var(--ink); }
-    .highlight p { margin-bottom: 0; color: var(--muted); }
-
-    .location-grid {
-      display: grid;
-      grid-template-columns: 1fr 0.9fr;
-      gap: 30px;
-      align-items: stretch;
-    }
-
-    .info-list {
-      display: grid;
-      gap: 16px;
-      margin: 28px 0;
-    }
-
-    .info-item {
-      display: grid;
-      grid-template-columns: 44px 1fr;
-      gap: 14px;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, .72fr);
+      gap: 36px;
       align-items: start;
     }
 
-    .icon {
-      width: 44px;
-      height: 44px;
-      display: grid;
-      place-items: center;
-      border-radius: 15px;
-      color: var(--leaf);
-      background: var(--sage);
+    .section-title {
+      font-size: clamp(2.7rem, 6.4vw, 7rem);
+      max-width: 760px;
+    }
+
+    .lovers {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 28px;
+      color: var(--muted);
       font-weight: 900;
     }
 
-    .info-item strong { display: block; color: var(--ink); line-height: 1.2; }
-    .info-item span, .info-item a { color: var(--muted); }
-
-    .map-card {
-      min-height: 620px;
-      overflow: hidden;
-      contain: paint;
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow);
-      background: var(--sage);
-      position: relative;
+    .avatar-row {
+      display: flex;
+      align-items: center;
     }
 
-    .map-card iframe {
-      width: 100%;
-      height: 100%;
-      min-height: 620px;
-      border: 0;
-      display: block;
-      filter: saturate(0.92) contrast(0.96);
+    .avatar-row img {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      border: 4px solid var(--paper);
+      margin-left: -14px;
     }
 
-    .footer-cta { padding: 86px 0; }
+    .avatar-row img:first-child { margin-left: 0; }
 
-    .cta-card {
+    .feature-stack {
       display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 28px;
-      align-items: end;
-      padding: clamp(34px, 8vw, 82px);
-      border-radius: var(--radius-xl);
-      color: var(--cream);
-      background:
-        linear-gradient(90deg, rgba(23, 40, 30, 0.92), rgba(38, 58, 45, 0.72)),
-        url("assets/floral-interior.jpg") center / cover;
-      box-shadow: var(--shadow);
+      gap: 14px;
     }
 
-    .cta-card h2 {
-      max-width: 760px;
-      margin-bottom: 16px;
-      font-family: "Playfair Display", serif;
-      font-size: clamp(2.4rem, 5.5vw, 5.6rem);
-      line-height: 0.9;
-      letter-spacing: -0.07em;
+    .mini-card,
+    .product-card,
+    .why-card,
+    .journal-card,
+    .faq-item,
+    .quote-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
     }
 
-    .cta-card p { max-width: 620px; margin-bottom: 0; color: rgba(255, 250, 242, 0.78); }
-    .cta-actions { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 12px; }
+    .mini-card {
+      padding: 26px;
+      transform: translateY(0);
+      transition: transform 260ms ease, background 260ms ease;
+    }
 
-    .site-footer {
-      padding: 38px 0 104px;
-      border-top: 1px solid var(--line);
+    .mini-card:hover {
+      transform: translateY(-6px);
+      background: #ffffff;
+    }
+
+    .mini-card h3,
+    .product-card h3,
+    .why-card h3,
+    .journal-card h3,
+    .faq-item h4 {
+      margin: 0 0 10px;
+      font-size: clamp(1.35rem, 2.2vw, 2rem);
+      letter-spacing: -0.055em;
+      line-height: 1;
+    }
+
+    .mini-card p,
+    .product-card p,
+    .why-card p,
+    .journal-card p,
+    .faq-item p,
+    .quote-card p {
+      margin: 0;
       color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .marquee {
+      display: flex;
+      overflow: hidden;
+      border-block: 1px solid var(--line);
+      background: var(--ryoku);
+      color: var(--ink);
+    }
+
+    .marquee-track {
+      display: flex;
+      min-width: max-content;
+      animation: marquee 28s linear infinite;
+    }
+
+    .marquee span {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      padding: 22px 24px;
+      font-family: "Archivo Black", Inter, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: -0.04em;
+      white-space: nowrap;
+    }
+
+    .marquee span::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--ink);
+    }
+
+    section { padding: 92px 0; }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 1fr minmax(250px, 420px);
+      gap: 30px;
+      align-items: end;
+      margin-bottom: 30px;
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-weight: 950;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+    }
+
+    .section-copy {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.04rem;
+      line-height: 1.58;
+    }
+
+    .products {
+      display: grid;
+      gap: 18px;
+    }
+
+    .product-card {
+      min-height: 360px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1fr);
+      align-items: stretch;
+      transition: transform 260ms ease;
+    }
+
+    .product-card:hover { transform: translateY(-6px); }
+
+    .product-card figure {
+      margin: 0;
+      overflow: hidden;
+      background: var(--soft);
+    }
+
+    .product-card img {
+      height: 100%;
+      transition: transform 700ms ease;
+    }
+
+    .product-card:hover img { transform: scale(1.06); }
+
+    .product-body {
+      padding: clamp(26px, 5vw, 54px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .product-card h3 { font-size: clamp(2.3rem, 5vw, 5rem); }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tags span {
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: #f1ede4;
+      color: var(--muted);
+      font-size: 0.84rem;
+      font-weight: 900;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: minmax(230px, .65fr) minmax(0, 1fr) minmax(280px, .8fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .why-card {
+      min-height: 280px;
+      padding: 30px;
+      overflow: hidden;
+    }
+
+    .why-card.featured {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      background: var(--dark);
+      color: var(--ink);
+    }
+
+    .why-card.featured p { color: rgba(16,16,15,.68); }
+
+    .counter {
+      margin: 36px 0;
+      font-family: "Archivo Black", Inter, sans-serif;
+      font-size: clamp(2.4rem, 5.4vw, 5.8rem);
+      letter-spacing: -0.075em;
+      line-height: .86;
+    }
+
+    .why-photo {
+      padding: 0;
+      overflow: hidden;
+      background: var(--soft);
+    }
+
+    .why-photo img { height: 100%; }
+
+    .journal-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .journal-card {
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 410px;
+      transition: transform 260ms ease;
+    }
+
+    .journal-card:hover { transform: translateY(-6px); }
+
+    .journal-card figure {
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px;
+      padding: 8px;
+    }
+
+    .journal-card img {
+      aspect-ratio: 1 / 1.15;
+      border-radius: 20px;
+    }
+
+    .journal-body { padding: 16px 18px 20px; }
+    .journal-body small {
+      display: block;
+      margin-top: 18px;
+      color: var(--accent);
+      font-weight: 950;
+    }
+
+    .photo-gallery {
+      display: grid;
+      grid-template-columns: 1.1fr .78fr 1fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .gallery-tile {
+      min-height: 320px;
+      margin: 0;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--soft);
+    }
+
+    .gallery-tile.tall { min-height: 560px; }
+    .gallery-tile.wide { grid-column: span 2; }
+    .gallery-tile img {
+      height: 100%;
+      transition: transform 700ms ease;
+    }
+    .gallery-tile:hover img { transform: scale(1.05); }
+
+    .visit {
+      padding: 110px 0;
+      text-align: center;
+    }
+
+    .visit-title {
+      font-size: clamp(4rem, 15vw, 13rem);
+      margin-bottom: 26px;
+    }
+
+    .visit-card {
+      width: min(820px, 100%);
+      margin: 0 auto;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+    }
+
+    .visit-card h4 {
+      margin: 0 0 14px;
+      font-size: clamp(1.4rem, 3vw, 2.5rem);
+      letter-spacing: -0.055em;
+    }
+
+    .visit-card p { margin: 0 0 22px; color: var(--muted); }
+
+    .testimonials {
+      background: #ede7dc;
+      border-radius: 48px 48px 0 0;
+      padding: 92px 0;
+    }
+
+    .quote-wrap {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 26px;
+      align-items: center;
+    }
+
+    .quote-card {
+      display: none;
+      min-height: 310px;
+      padding: clamp(26px, 5vw, 56px);
+    }
+
+    .quote-card.active { display: grid; }
+    .quote-card h3 {
+      margin: 0 0 26px;
+      max-width: 850px;
+      font-size: clamp(1.8rem, 4vw, 4.1rem);
+      line-height: .95;
+      letter-spacing: -0.065em;
+    }
+
+    .quote-controls {
+      display: flex;
+      gap: 10px;
+    }
+
+    .circle-btn {
+      width: 52px;
+      height: 52px;
+      border: 0;
+      border-radius: 50%;
+      background: var(--ryoku);
+      color: var(--ink);
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .8fr) minmax(0, 1fr);
+      gap: 30px;
+      align-items: start;
+    }
+
+    .faq-list { display: grid; gap: 12px; }
+
+    .faq-item {
+      padding: 24px;
+      cursor: pointer;
+    }
+
+    .faq-item p {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 260ms ease, margin-top 260ms ease;
+    }
+
+    .faq-item p span { overflow: hidden; }
+    .faq-item.open p { grid-template-rows: 1fr; margin-top: 12px; }
+
+    footer {
+      padding: 70px 0 28px;
+      color: var(--ink);
+      background: var(--ryoku);
+      border-radius: 48px 48px 0 0;
     }
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 24px;
-      align-items: center;
+      grid-template-columns: minmax(0, 1fr) repeat(3, minmax(120px, 180px));
+      gap: 34px;
+      align-items: start;
     }
 
-    .footer-links {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      color: var(--ink-soft);
-      font-weight: 900;
+    .footer-logo {
+      font-family: "Archivo Black", Inter, sans-serif;
+      font-size: clamp(2.6rem, 6vw, 6rem);
+      letter-spacing: -0.075em;
+      line-height: .85;
+      text-transform: uppercase;
     }
 
-    .mobile-bar {
-      display: none;
-      position: fixed;
-      z-index: 60;
-      left: 12px;
-      right: 12px;
-      bottom: 12px;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      padding: 10px;
-      border: 1px solid rgba(23, 40, 30, 0.1);
-      border-radius: 999px;
-      background: rgba(255, 250, 242, 0.92);
-      box-shadow: 0 20px 50px rgba(23, 40, 30, 0.18);
-      backdrop-filter: blur(18px);
+    .footer-col h4 {
+      margin: 0 0 16px;
+      color: rgba(16,16,15,.5);
+      font-size: .78rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
     }
 
-    .mobile-bar .btn { min-height: 44px; padding: 10px 14px; font-size: 0.87rem; }
+    .footer-col a,
+    .footer-col p {
+      display: block;
+      margin: 0 0 10px;
+      color: var(--ink);
+      font-weight: 850;
+    }
 
-    @media (max-width: 1040px) {
-      .hero-grid,
-      .split,
-      .band,
-      .review-grid,
-      .location-grid,
-      .cta-card {
-        grid-template-columns: 1fr;
+    .copyright {
+      margin: 70px 0 0;
+      color: rgba(16,16,15,.55);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 700ms ease, transform 700ms ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    @keyframes gentleZoom {
+      from { transform: scale(1.04); }
+      to { transform: scale(1.12); }
+    }
+
+    @media (max-width: 960px) {
+      .site-nav,
+      .site-nav.scrolled {
+        top: 13px;
+        left: 50%;
+        right: auto;
+        width: min(100% - 26px, var(--max));
+        min-width: 0;
+        transform: translateX(-50%);
+        padding: 10px 12px;
+        border: 1px solid rgba(16, 16, 15, 0.08);
+        background: rgba(255, 253, 248, 0.9);
+        box-shadow: 0 18px 70px rgba(16, 16, 15, 0.12);
+        backdrop-filter: blur(18px);
       }
-
-      .hero-copy,
-      .hero-visual { min-height: unset; }
-      .hero-photo { min-height: 540px; }
-      .stats-inner,
-      .experience-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .menu-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .band-photo { min-height: 440px; }
-      .cta-actions { justify-content: flex-start; }
-    }
-
-    @media (max-width: 760px) {
-      .container { width: min(100% - 28px, var(--container)); }
-      .nav { min-height: 68px; }
-      .nav-links,
-      .nav-actions { display: none; }
-      .menu-toggle { display: inline-grid; place-items: center; }
-      .nav.open .nav-links {
+      .site-nav .brand-mark {
+        width: 42px;
+        height: 42px;
+        box-shadow: 0 10px 24px rgba(16, 16, 15, 0.18);
+      }
+      .nav-links { display: none; }
+      .mobile-toggle {
         display: grid;
+        place-items: center;
+        width: 42px;
+        height: 42px;
+        border: 0;
+        border-radius: 50%;
+        background: var(--ink);
+        color: var(--white);
+      }
+      .nav-links.open {
         position: absolute;
-        left: 14px;
-        right: 14px;
-        top: 76px;
-        padding: 14px;
-        border: 1px solid rgba(23, 40, 30, 0.08);
-        border-radius: 24px;
-        background: var(--cream);
-        box-shadow: var(--shadow);
-      }
-      .nav.open .nav-links a { padding: 12px 14px; }
-      .hero { padding-top: 20px; padding-bottom: 52px; }
-      section { padding: 68px 0; }
-      .hero-copy { padding: 28px; border-radius: 26px; }
-      .hero h1 { font-size: clamp(3.4rem, 17vw, 5.5rem); }
-      .hero-meta,
-      .stats-inner,
-      .experience-grid,
-      .highlights-grid,
-      .menu-grid,
-      .footer-grid { grid-template-columns: 1fr; }
-      .menu-card {
+        top: calc(100% + 10px);
+        left: 0;
+        right: 0;
         display: grid;
-        grid-template-columns: minmax(118px, 36%) minmax(0, 1fr);
-        min-height: 152px;
+        padding: 16px;
+        border: 1px solid var(--line);
+        border-radius: 26px;
+        background: var(--white);
       }
-      .menu-card figure {
-        aspect-ratio: auto;
-        height: 100%;
-        min-height: 152px;
-      }
-      .menu-content { padding: 16px; }
-      .menu-card h3 { font-size: 1.05rem; }
-      .hero-photo,
-      .map-card,
-      .map-card iframe { min-height: 430px; }
-      .quick-card { grid-template-columns: 1fr; }
-      .image-stack { grid-template-columns: 1fr; }
-      .image-stack img:first-child,
-      .image-stack img:last-child { height: auto; margin: 0; }
-      .menu-head { display: block; }
-      .menu-filters { justify-content: flex-start; margin-top: 20px; }
-      .feature-list li { display: block; }
-      .feature-list li span { display: block; margin-top: 4px; }
-      .mobile-bar { display: grid; }
+      .hero-top,
+      .intro,
+      .section-head,
+      .why-grid,
+      .faq-grid,
+      .quote-wrap,
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero-top { min-height: 280px; }
+      .hero-actions { justify-content: flex-start; flex-wrap: wrap; }
+      .product-card { grid-template-columns: 1fr; }
+      .product-card figure { min-height: 360px; }
+      .journal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .photo-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .gallery-tile.wide { grid-column: span 1; }
+    }
+
+    @media (max-width: 620px) {
+      .page-shell,
+      .site-nav { width: min(100% - 26px, var(--max)); }
+      .hero { padding-top: 100px; }
+      .hero h1 { font-size: clamp(2.8rem, 13vw, 4.3rem); }
+      .hero-media { min-height: 430px; }
+      .intro,
+      section,
+      .testimonials { padding-block: 68px; }
+      .journal-grid { grid-template-columns: 1fr; }
+      .product-card figure { min-height: 290px; }
+      .photo-gallery { grid-template-columns: 1fr; }
+      .gallery-tile,
+      .gallery-tile.tall { min-height: 360px; }
+      .footer-grid { gap: 24px; }
     }
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav" id="nav">
-      <a class="brand" href="#top" aria-label="Ryoku Cafe home">
-        <span class="brand-mark">緑</span>
-        <span>Ryoku Cafe<small>Sukhumvit 35</small></span>
-      </a>
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#menu">Menu</a>
-        <a href="#story">Story</a>
-        <a href="#space">Space</a>
-        <a href="#events">Events</a>
-        <a href="#location">Location</a>
+  <header class="site-nav" id="siteNav">
+    <a class="brand" href="#top" aria-label="Ryoku Cafe home">
+      <span class="brand-mark">✤</span>
+      <span>Ryoku</span>
+    </a>
+    <div class="nav-actions">
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <a class="roll-link" href="#bestsellers"><span>Bestsellers</span><span>Bestsellers</span></a>
+        <a class="roll-link" href="#journal"><span>Journal</span><span>Journal</span></a>
+        <a class="roll-link" href="#whyus"><span>About</span><span>About</span></a>
+        <a class="roll-link" href="#visitus"><span>Visit us</span><span>Visit us</span></a>
       </nav>
-      <div class="nav-actions">
-        <a class="btn btn-outline" href="tel:+66927726000">Call</a>
-        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Ryoku%20Cafe%2028%20Sukhumvit%2035%20Bangkok" target="_blank" rel="noreferrer">Get Directions</a>
-      </div>
-      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+      <a class="pill-link" href="tel:+66927726000"><span>Call Ryoku</span><span>Call Ryoku</span></a>
     </div>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Open menu">☰</button>
   </header>
 
   <main id="top">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow">Botanical cafe & bistro</span>
-          <h1>Osaka-style souffle pancakes <span>inside a garden house.</span></h1>
-          <p class="hero-text">Ryoku Cafe is a Japanese-Western cafe and bistro in Sukhumvit 35, set in a renovated 50-year-old house with bright glasshouse corners, greenery, brunch plates and specialty drinks.</p>
-          <div class="hero-ctas">
-            <a class="btn btn-primary" href="#menu">View Menu</a>
-            <a class="btn btn-secondary" href="#location">Plan Your Visit</a>
-            <a class="btn btn-outline" href="tel:+66927726000">Reserve / Call</a>
-          </div>
-          <div class="hero-meta" aria-label="Quick information">
-            <div class="meta-card"><strong>Open daily</strong><span>08:00 - 20:00</span></div>
-            <div class="meta-card"><strong>Near BTS</strong><span>Phrom Phong</span></div>
-            <div class="meta-card"><strong>Known for</strong><span>Souffle pancakes</span></div>
+    <section class="hero page-shell">
+      <div class="hero-top">
+        <div>
+          <h1>Ryoku Cafe</h1>
+          <p class="hero-kicker">Warm, airy and quietly refined. A Sukhumvit garden house for souffle pancakes, brunch and small daily rituals.</p>
+        </div>
+        <div>
+          <div class="hero-actions">
+            <a class="pill-link" href="#bestsellers"><span>Bestsellers</span><span>Bestsellers</span></a>
+            <a class="roll-link" href="#visitus"><span>Visit the Cafe</span><span>Visit the Cafe</span></a>
           </div>
         </div>
+      </div>
+      <figure class="hero-media">
+        <img src="ryokuphotos2/hero.jpeg" alt="Ryoku Cafe white garden house exterior" />
+      </figure>
+    </section>
 
-        <aside class="hero-visual" aria-label="Ryoku Cafe images and contact">
-          <div class="hero-photo">
-            <img src="assets/garden-exterior.jpg" alt="Ryoku Cafe garden exterior in Sukhumvit 35 Bangkok" />
-            <div class="floating-note">
-              <strong>A quiet garden-house cafe</strong>
-              <span>Natural light, greenery, floral details, two floors and a calm escape from Bangkok city pace.</span>
-            </div>
+    <section class="intro page-shell" id="whyus">
+      <div class="reveal">
+        <h2 class="section-title">Made for slow mornings and quiet afternoons</h2>
+        <div class="lovers">
+          <div class="avatar-row">
+            <img src="ryokuphotos/image13.jpeg" alt="" />
+            <img src="ryokuphotos/image7.jpeg" alt="" />
+            <img src="ryokuphotos/image12.jpeg" alt="" />
           </div>
-          <div class="quick-card">
-            <div><span>Call Ryoku</span><strong>+66 9-2772-6000</strong></div>
-            <a class="btn btn-light" href="mailto:ryokucafe@gmail.com">Email Us</a>
-          </div>
-        </aside>
+          <span>Bangkok brunch lovers</span>
+        </div>
+      </div>
+      <div class="feature-stack reveal">
+        <article class="mini-card">
+          <h3>Osaka-style souffle</h3>
+          <p>Soft, airy pancakes prepared as the gentle signature of the house.</p>
+        </article>
+        <article class="mini-card">
+          <h3>Japanese-Western brunch</h3>
+          <p>Comfort plates, pasta, toast, coffee and seasonal desserts.</p>
+        </article>
+        <article class="mini-card">
+          <h3>Garden house calm</h3>
+          <p>A renovated two-floor white house near BTS Phrom Phong.</p>
+        </article>
       </div>
     </section>
 
-    <div class="stats-strip">
-      <div class="container stats-inner" aria-label="Ryoku highlights">
-        <div class="stat"><strong>Osaka-style</strong><span>Soft, airy souffle pancakes</span></div>
-        <div class="stat"><strong>Brunch & bistro</strong><span>Sweet, savory and seasonal plates</span></div>
-        <div class="stat"><strong>Specialty drinks</strong><span>Coffee, matcha, yuzu and refreshers</span></div>
-        <div class="stat"><strong>Garden venue</strong><span>Two-floor house cafe near Phrom Phong</span></div>
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Ryoku relax time</span><span>Souffle pancakes</span><span>Garden brunch</span><span>Sukhumvit 35</span>
+        <span>Ryoku relax time</span><span>Souffle pancakes</span><span>Garden brunch</span><span>Sukhumvit 35</span>
       </div>
     </div>
 
-    <section id="story">
-      <div class="container split">
-        <div class="image-stack" aria-hidden="true">
-          <img src="assets/floral-interior.jpg" alt="Bright floral interior seating at Ryoku Cafe" />
-          <img src="assets/toast-dessert.jpg" alt="Ryoku Cafe plated dessert and brunch detail" />
+    <section class="page-shell" id="bestsellers">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">Our favorites</p>
+          <h2 class="section-title">A few of Ryoku's most loved rituals.</h2>
         </div>
-        <div class="story-card">
-          <span class="eyebrow">The story behind Ryoku</span>
-          <h2 class="section-title">Cafe comfort, Japanese craft, Bangkok garden soul.</h2>
-          <p class="section-lead">Ryoku began with friends, a Japanese chef and an Osaka souffle pancake recipe they wanted Bangkok to try. The cafe now blends modern Western comfort with Japanese inspiration inside a white garden house on Sukhumvit 35.</p>
-          <p class="thai-copy">เรียวกุคาเฟ่นำเสนออาหาร Modern Western Cuisine with Japanese infusion โดยมี Souffle Pancake เป็นเอกลักษณ์ ทั้งเมนูคาวและหวาน พร้อมซอสหลากหลายที่ได้แรงบันดาลใจจากกลิ่นดอกไม้และรสผลไม้</p>
-          <p class="section-lead">The house is designed as a minimal-vintage oasis: garden paths, soft curtains, floral styling and calm corners for slow brunch, coffee and private moments.</p>
-          <a class="btn btn-primary" href="#menu">Explore the Menu</a>
-        </div>
+        <p class="section-copy">Sweet, savory and refreshing favorites from the original Ryoku menu, reimagined in the same soft editorial flow as the reference.</p>
       </div>
-    </section>
-
-    <section id="menu">
-      <div class="container">
-        <div class="menu-head">
-          <div>
-            <span class="eyebrow">Signature menu</span>
-            <h2 class="section-title">Sweet, savory and softly memorable.</h2>
-            <p class="section-lead">Discover Ryoku favorites across souffle pancakes, brunch, pasta, desserts, coffee and refreshing seasonal drinks.</p>
-          </div>
-          <div class="menu-filters" role="tablist" aria-label="Menu filters">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="pancakes">Pancakes</button>
-            <button class="filter-btn" data-filter="savory">Savory</button>
-            <button class="filter-btn" data-filter="drinks">Drinks</button>
-            <button class="filter-btn" data-filter="dessert">Dessert</button>
-          </div>
-        </div>
-
-        <div class="menu-grid">
-          <article class="menu-card" data-menu-item data-category="pancakes">
-            <figure><img src="assets/signature-pancake.jpg" alt="Ryoku signature souffle pancake" /></figure>
-            <div class="menu-content">
-              <div class="tag-row"><span class="tag">Signature</span><span class="price">฿339</span></div>
-              <h3>Ryoku’s Premium</h3>
+      <div class="products">
+        <article class="product-card reveal">
+          <figure><img src="ryokuphotos/image1.jpeg" alt="Ryoku premium souffle pancake" /></figure>
+          <div class="product-body">
+            <div>
+              <h3>Ryoku's Premium</h3>
               <p>Fluffy souffle pancakes with cream, fruit and a refined Ryoku finish.</p>
             </div>
-          </article>
-
-          <article class="menu-card" data-menu-item data-category="pancakes">
-            <figure><img src="assets/souffle-dessert.jpg" alt="Souffle pancake set with fruit and cream" /></figure>
-            <div class="menu-content">
-              <div class="tag-row"><span class="tag">Premium set</span><span class="price">฿499</span></div>
-              <h3>Ryoku’s Konbo</h3>
-              <p>A complete pancake plate for guests who want the full signature experience.</p>
-            </div>
-          </article>
-
-          <article class="menu-card" data-menu-item data-category="savory">
-            <figure><img src="assets/brunch-plate.jpg" alt="Savory brunch plate at Ryoku Cafe" /></figure>
-            <div class="menu-content">
-              <div class="tag-row"><span class="tag">Brunch</span><span class="price">฿299</span></div>
-              <h3>Egg Benedict</h3>
-              <p>A savory brunch favorite with soft textures and bright finishing flavors.</p>
-            </div>
-          </article>
-
-          <article class="menu-card" data-menu-item data-category="savory">
-            <figure><img src="assets/toast-dessert.jpg" alt="Smorrebrod toast plate with melon and ham" /></figure>
-            <div class="menu-content">
-              <div class="tag-row"><span class="tag">Smorrebrod</span><span class="price">฿229</span></div>
-              <h3>Parma & Melon with Avocado Cream</h3>
-              <p>Fresh, colorful toast with creamy avocado, fruit notes and delicate savory balance.</p>
-            </div>
-          </article>
-
-          <article class="menu-card" data-menu-item data-category="savory">
-            <figure><img src="assets/floral-interior.jpg" alt="Cafe table and natural light at Ryoku Cafe" /></figure>
-            <div class="menu-content">
-              <div class="tag-row"><span class="tag">Main course</span><span class="price">฿455</span></div>
-              <h3>Spaghetti Mentaiko with Shrimp</h3>
-              <p>Japanese-inspired pasta for a more substantial cafe meal.</p>
-            </div>
-          </article>
-
-          <article class="menu-card" data-menu-item data-category="drinks">
-            <figure><img src="assets/coffee-drinks.jpg" alt="Iced coffee drinks at Ryoku Cafe" /></figure>
-            <div class="menu-content">
-              <div class="tag-row"><span class="tag">Coffee</span><span class="price">฿175</span></div>
-              <h3>Ryoku’s Dirty Coffee</h3>
+            <div class="tags"><span>Signature</span><span>Souffle</span><span>฿339</span></div>
+          </div>
+        </article>
+        <article class="product-card reveal">
+          <figure><img src="ryokuphotos2/dirty.jpeg" alt="Ryoku dirty coffee" /></figure>
+          <div class="product-body">
+            <div>
+              <h3>Ryoku's Dirty Coffee</h3>
               <p>A layered specialty coffee with a smooth, photogenic finish.</p>
             </div>
-          </article>
-
-          <article class="menu-card" data-menu-item data-category="drinks">
-            <figure><img src="assets/refreshing-drinks.jpg" alt="Refreshing specialty drinks at Ryoku Cafe" /></figure>
-            <div class="menu-content">
-              <div class="tag-row"><span class="tag">Refreshing</span><span class="price">฿175</span></div>
-              <h3>Nitro Yuzu Cold Brew Coffee</h3>
-              <p>Bright yuzu and coffee refreshment for warm Bangkok afternoons.</p>
-            </div>
-          </article>
-
-          <article class="menu-card" data-menu-item data-category="dessert">
-            <figure><img src="assets/souffle-dessert.jpg" alt="Dessert souffle pancake with fruit" /></figure>
-            <div class="menu-content">
-              <div class="tag-row"><span class="tag">Parfait</span><span class="price">฿219</span></div>
-              <h3>Berry Pinku</h3>
-              <p>Soft cream, berry brightness and a gentle floral dessert mood.</p>
-            </div>
-          </article>
-
-          <article class="menu-card" data-menu-item data-category="dessert">
-            <figure><img src="assets/toast-dessert.jpg" alt="Cafe dessert presentation" /></figure>
-            <div class="menu-content">
-              <div class="tag-row"><span class="tag">Cake</span><span class="price">฿155</span></div>
-              <h3>Matcha Latte Cake</h3>
-              <p>A soft matcha dessert for coffee, tea and afternoon cafe visits.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="events">
-      <div class="container band">
-        <div class="band-copy">
-          <span class="eyebrow">Private moments</span>
-          <h2 class="section-title">A garden setting for brunch, birthdays and gatherings.</h2>
-          <p class="section-lead">From everyday cafe visits to intimate celebrations, Ryoku offers a warm two-floor garden-house atmosphere with desserts, drinks and bistro plates for shared moments.</p>
-          <ul class="feature-list">
-            <li><strong>Private parties</strong><span>Garden-house ambience</span></li>
-            <li><strong>Birthdays</strong><span>Photo-friendly floral setting</span></li>
-            <li><strong>Small gatherings</strong><span>Brunch, drinks and desserts</span></li>
-            <li><strong>Seasonal menus</strong><span>Limited flavors and cafe specials</span></li>
-          </ul>
-        </div>
-        <div class="band-photo" aria-label="Ryoku souffle pancake dish"></div>
-      </div>
-    </section>
-
-    <section id="space">
-      <div class="container">
-        <span class="eyebrow">Cafe atmosphere</span>
-        <h2 class="section-title">Soft light, greenery and thoughtful details.</h2>
-        <p class="section-lead">Ryoku is made for relaxed brunch, quiet catch-ups, dessert dates and slow afternoons in a calming Sukhumvit garden setting.</p>
-        <div class="experience-grid">
-          <article class="experience-card"><h3>Garden escape</h3><p>Greenery and calm corners in the middle of Sukhumvit.</p></article>
-          <article class="experience-card"><h3>Floral interiors</h3><p>Soft styling for brunch, photos and slow afternoons.</p></article>
-          <article class="experience-card"><h3>Brunch plates</h3><p>Sweet and savory menus for every cafe occasion.</p></article>
-          <article class="experience-card"><h3>Specialty drinks</h3><p>Coffee, matcha, yuzu and seasonal refreshers.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="reviews" aria-label="Guest highlights">
-      <div class="container review-grid">
-        <div class="review-card">
-          <span class="eyebrow">Guest favorites</span>
-          <strong class="big">Ryoku</strong>
-          <p class="section-lead">A calm cafe experience centered on fluffy pancakes, garden atmosphere and Japanese-inspired comfort.</p>
-          <a class="btn btn-primary" href="#location">Visit Ryoku</a>
-        </div>
-        <div class="highlights-grid">
-          <article class="highlight"><h3>Fluffy souffle pancakes</h3><p>Soft, airy pancakes with sweet and savory variations.</p></article>
-          <article class="highlight"><h3>Hidden garden mood</h3><p>A renovated white house close to Phrom Phong.</p></article>
-          <article class="highlight"><h3>Brunch-friendly menu</h3><p>Pancakes, pasta, toast, desserts and drinks for many occasions.</p></article>
-          <article class="highlight"><h3>Photogenic details</h3><p>Natural light, floral styling and warm cafe textures throughout.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="location">
-      <div class="container location-grid">
-        <div class="location-panel">
-          <span class="eyebrow">Location & contact</span>
-          <h2 class="section-title">Find Ryoku in Sukhumvit 35.</h2>
-          <p class="section-lead">Visit for pancakes, brunch, coffee and a quiet garden cafe moment near BTS Phrom Phong in the heart of Bangkok.</p>
-          <div class="info-list">
-            <div class="info-item"><span class="icon">⌖</span><div><strong>Address</strong><span>28 Sukhumvit 35, Bangkok, Thailand</span></div></div>
-            <div class="info-item"><span class="icon">◷</span><div><strong>Opening hours</strong><span>Open daily, 08:00 - 20:00</span></div></div>
-            <div class="info-item"><span class="icon">☎</span><div><strong>Phone</strong><a href="tel:+66927726000">+66 9-2772-6000</a></div></div>
-            <div class="info-item"><span class="icon">✉</span><div><strong>Email</strong><a href="mailto:ryokucafe@gmail.com">ryokucafe@gmail.com</a></div></div>
-            <div class="info-item"><span class="icon">＋</span><div><strong>Line</strong><a href="https://line.me/R/ti/p/@ryoku.cafe" target="_blank" rel="noreferrer">ryoku.cafe</a></div></div>
+            <div class="tags"><span>Coffee</span><span>Layered</span><span>฿175</span></div>
           </div>
-          <div class="hero-ctas">
-            <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Ryoku%20Cafe%2028%20Sukhumvit%2035%20Bangkok" target="_blank" rel="noreferrer">Open Google Maps</a>
-            <a class="btn btn-secondary" href="https://www.facebook.com/ryokucafe/" target="_blank" rel="noreferrer">Facebook</a>
-            <a class="btn btn-outline" href="https://www.instagram.com/ryoku.cafe/" target="_blank" rel="noreferrer">Instagram</a>
+        </article>
+        <article class="product-card reveal">
+          <figure><img src="ryokuphotos/image7.jpeg" alt="Parma melon toast with avocado cream" /></figure>
+          <div class="product-body">
+            <div>
+              <h3>Parma & Melon Toast</h3>
+              <p>Colorful toast with creamy avocado, fruit notes and delicate savory balance.</p>
+            </div>
+            <div class="tags"><span>Smorrebrod</span><span>Brunch</span><span>฿229</span></div>
           </div>
-        </div>
-        <div class="map-card" aria-label="Ryoku Cafe map">
-          <iframe title="Map to Ryoku Cafe Sukhumvit 35" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Ryoku%20Cafe%2028%20Sukhumvit%2035%20Bangkok&output=embed"></iframe>
-        </div>
+        </article>
       </div>
     </section>
 
-    <section class="footer-cta">
-      <div class="container cta-card">
+    <section class="page-shell">
+      <div class="section-head reveal">
         <div>
-          <h2>Your table in the garden is waiting.</h2>
-          <p>Come for souffle pancakes, stay for coffee, brunch and a peaceful Ryoku moment in Sukhumvit 35.</p>
+          <p class="eyebrow">Why Ryoku</p>
+          <h2 class="section-title">A garden ritual in the middle of Bangkok.</h2>
         </div>
-        <div class="cta-actions">
-          <a class="btn btn-light" href="#menu">See Menu</a>
-          <a class="btn btn-primary" href="tel:+66927726000">Call Now</a>
+        <p class="section-copy">Ryoku brings together Japanese-inspired pancake craft, modern cafe comfort and a setting made for slowing down.</p>
+      </div>
+      <div class="why-grid">
+        <article class="why-card reveal">
+          <h3>Simple details</h3>
+          <p>White house architecture, soft curtains, natural light and warm table textures.</p>
+        </article>
+        <article class="why-card featured reveal">
+          <h3>Open daily</h3>
+          <div class="counter">08:00-20:00</div>
+          <p>Visit for brunch, souffle pancakes and quiet afternoon coffee near BTS Phrom Phong.</p>
+        </article>
+        <figure class="why-card why-photo reveal">
+          <img src="ryokuphotos2/image0.jpeg" alt="Ryoku Cafe exterior glass house" />
+        </figure>
+      </div>
+    </section>
+
+    <section class="page-shell" id="photos">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">Photos</p>
+          <h2 class="section-title">Windows, plates and bright corners.</h2>
+        </div>
+        <p class="section-copy">A cleaner white page makes the new Ryoku photos stand out: exterior glass, crisp interiors, plated pancakes, coffee and seasonal dishes.</p>
+      </div>
+      <div class="photo-gallery">
+        <figure class="gallery-tile tall reveal"><img src="ryokuphotos2/image10.jpeg" alt="Ryoku Cafe garden terrace" /></figure>
+        <figure class="gallery-tile reveal"><img src="ryokuphotos2/image0.jpeg" alt="Ryoku Cafe glass house entrance" /></figure>
+        <figure class="gallery-tile reveal"><img src="ryokuphotos2/image1.jpeg" alt="Ryoku Cafe garden seating" /></figure>
+        <figure class="gallery-tile reveal"><img src="ryokuphotos2/image11.jpeg" alt="Ryoku Cafe floral window display" /></figure>
+        <figure class="gallery-tile wide reveal"><img src="ryokuphotos2/image8.jpeg" alt="Guests enjoying Ryoku Cafe" /></figure>
+        <figure class="gallery-tile reveal"><img src="ryokuphotos2/dirty.jpeg" alt="Ryoku dirty coffee" /></figure>
+        <figure class="gallery-tile reveal"><img src="ryokuphotos2/image2.jpeg" alt="Ryoku pasta dish" /></figure>
+        <figure class="gallery-tile reveal"><img src="ryokuphotos2/image4.jpeg" alt="Ryoku souffle pancake preparation" /></figure>
+        <figure class="gallery-tile reveal"><img src="ryokuphotos2/image7.jpeg" alt="Ryoku pumpkin soup" /></figure>
+        <figure class="gallery-tile wide reveal"><img src="ryokuphotos2/image13.jpeg" alt="Ryoku illustrated cafe scene" /></figure>
+      </div>
+    </section>
+
+    <section class="page-shell" id="journal">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">Journal</p>
+          <h2 class="section-title">Moments from the garden house.</h2>
+        </div>
+        <p class="section-copy">Small editorial stories built from Ryoku's real menu, cafe space and visit details.</p>
+      </div>
+      <div class="journal-grid">
+        <article class="journal-card reveal">
+          <figure><img src="ryokuphotos/image11.jpeg" alt="" /><img src="ryokuphotos2/image4.jpeg" alt="" /></figure>
+          <div class="journal-body"><h3>Why souffle pancakes feel different</h3><p>Soft texture, warm cream and a slower kind of dessert.</p><small>by Ryoku</small></div>
+        </article>
+        <article class="journal-card reveal">
+          <figure><img src="ryokuphotos2/image12.jpeg" alt="" /><img src="ryokuphotos2/hero.jpeg" alt="" /></figure>
+          <div class="journal-body"><h3>A renovated house in Sukhumvit 35</h3><p>How the space turns brunch into a small escape.</p><small>by Ryoku</small></div>
+        </article>
+        <article class="journal-card reveal">
+          <figure><img src="ryokuphotos2/dirty.jpeg" alt="" /><img src="ryokuphotos/image17.jpeg" alt="" /></figure>
+          <div class="journal-body"><h3>Coffee, yuzu and warm afternoons</h3><p>Refreshing drinks for Bangkok's soft golden hours.</p><small>by Ryoku</small></div>
+        </article>
+        <article class="journal-card reveal">
+          <figure><img src="ryokuphotos2/image2.jpeg" alt="" /><img src="ryokuphotos2/image8.jpeg" alt="" /></figure>
+          <div class="journal-body"><h3>Brunch plates beyond dessert</h3><p>Japanese-Western comfort for a more complete cafe visit.</p><small>by Ryoku</small></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="visit page-shell" id="visitus">
+      <h2 class="visit-title reveal">Visit us</h2>
+      <div class="visit-card reveal">
+        <h4>28 Sukhumvit 35, Bangkok, Thailand</h4>
+        <p>Open daily, 08:00 - 20:00. Near BTS Phrom Phong.</p>
+        <a class="pill-link" href="https://www.google.com/maps/search/?api=1&query=Ryoku%20Cafe%2028%20Sukhumvit%2035%20Bangkok" target="_blank" rel="noreferrer"><span>Get directions</span><span>Get directions</span></a>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="page-shell">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Words from regulars</p>
+            <h2 class="section-title">A few kind notes from the table.</h2>
+          </div>
+          <p class="section-copy">A carousel-inspired section with the same simple controls and soft editorial feel.</p>
+        </div>
+        <div class="quote-wrap reveal">
+          <div>
+            <article class="quote-card active">
+              <h3>"The house, the pancakes, the glasshouse light — it feels calm before the first bite."</h3>
+              <p>Ariya P. · Brunch guest</p>
+            </article>
+            <article class="quote-card">
+              <h3>"Ryoku is where I go when I want a cafe that feels polished without feeling stiff."</h3>
+              <p>Napat S. · Bangkok creative</p>
+            </article>
+            <article class="quote-card">
+              <h3>"The dirty coffee and souffle pancake combo is a perfect slow afternoon."</h3>
+              <p>Mina K. · Coffee regular</p>
+            </article>
+          </div>
+          <div class="quote-controls" aria-label="Testimonial controls">
+            <button class="circle-btn" id="prevQuote" aria-label="Previous quote">←</button>
+            <button class="circle-btn" id="nextQuote" aria-label="Next quote">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-shell" id="faq">
+      <div class="faq-grid">
+        <div class="reveal">
+          <p class="eyebrow">FAQ</p>
+          <h2 class="section-title">Before your first visit.</h2>
+        </div>
+        <div class="faq-list reveal">
+          <article class="faq-item open">
+            <h4>What is Ryoku known for?</h4>
+            <p><span>Ryoku is known for Osaka-style souffle pancakes, Japanese-Western brunch, coffee and its garden house setting.</span></p>
+          </article>
+          <article class="faq-item">
+            <h4>Where is the cafe?</h4>
+            <p><span>Ryoku Cafe is at 28 Sukhumvit 35, Bangkok, near BTS Phrom Phong.</span></p>
+          </article>
+          <article class="faq-item">
+            <h4>What are the opening hours?</h4>
+            <p><span>The cafe is open daily from 08:00 to 20:00.</span></p>
+          </article>
+          <article class="faq-item">
+            <h4>Can I call ahead?</h4>
+            <p><span>Yes. Call +66 9-2772-6000 for visit questions and reservations.</span></p>
+          </article>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
+  <footer>
+    <div class="page-shell footer-grid">
       <div>
-        <a class="brand" href="#top"><span class="brand-mark">緑</span><span>Ryoku Cafe<small>Botanical cafe & bistro</small></span></a>
-        <p style="margin: 14px 0 0; max-width: 560px;">28 Sukhumvit 35, Bangkok · Open daily 08:00 - 20:00 · +66 9-2772-6000</p>
+        <div class="footer-logo">Ryoku<br />Cafe</div>
+        <p class="copyright">© Ryoku Cafe Bangkok. Concept website inspired by a Framer-style cafe template.</p>
       </div>
-      <div class="footer-links">
-        <a href="#menu">Menu</a>
-        <a href="#story">Story</a>
-        <a href="#events">Events</a>
-        <a href="#location">Location</a>
+      <div class="footer-col">
+        <h4>Contact info</h4>
+        <a href="mailto:ryokucafe@gmail.com">ryokucafe@gmail.com</a>
+        <a href="tel:+66927726000">+66 9-2772-6000</a>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <a href="#bestsellers">Bestsellers</a>
+        <a href="#journal">Journal</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Social</h4>
+        <a href="https://www.instagram.com/ryoku.cafe/" target="_blank" rel="noreferrer">Instagram</a>
+        <a href="https://www.facebook.com/ryokucafe/" target="_blank" rel="noreferrer">Facebook</a>
+        <a href="https://line.me/R/ti/p/@ryoku.cafe" target="_blank" rel="noreferrer">Line</a>
       </div>
     </div>
   </footer>
 
-  <div class="mobile-bar" aria-label="Mobile quick actions">
-    <a class="btn btn-secondary" href="#menu">Menu</a>
-    <a class="btn btn-primary" href="tel:+66927726000">Call</a>
-  </div>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Restaurant",
-    "name": "Ryoku Cafe",
-    "servesCuisine": ["Cafe", "Japanese-inspired", "Brunch", "Dessert"],
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "28 Sukhumvit 35",
-      "addressLocality": "Bangkok",
-      "addressCountry": "TH"
-    },
-    "telephone": "+66 9-2772-6000",
-    "email": "ryokucafe@gmail.com",
-    "openingHours": "Mo-Su 08:00-20:00",
-    "url": "https://ryokucafe.com/",
-    "image": "assets/garden-exterior.jpg"
-  }
-  </script>
-
   <script>
-    const nav = document.getElementById('nav');
-    const menuToggle = document.getElementById('menuToggle');
-    const filterButtons = document.querySelectorAll('[data-filter]');
-    const menuItems = document.querySelectorAll('[data-menu-item]');
+    const siteNav = document.getElementById('siteNav');
+    const navLinks = document.getElementById('navLinks');
+    const mobileToggle = document.getElementById('mobileToggle');
+    const revealItems = document.querySelectorAll('.reveal');
+    const faqItems = document.querySelectorAll('.faq-item');
+    const quoteCards = document.querySelectorAll('.quote-card');
+    const nextQuote = document.getElementById('nextQuote');
+    const prevQuote = document.getElementById('prevQuote');
+    let quoteIndex = 0;
 
-    menuToggle?.addEventListener('click', () => {
-      nav.classList.toggle('open');
-      menuToggle.textContent = nav.classList.contains('open') ? '×' : '☰';
+    function updateNavPosition() {
+      const heroMedia = document.querySelector('.hero-media');
+      const trigger = heroMedia ? heroMedia.offsetTop + heroMedia.offsetHeight - 90 : 120;
+      siteNav.classList.toggle('scrolled', window.scrollY > trigger);
+    }
+
+    updateNavPosition();
+    window.addEventListener('scroll', updateNavPosition, { passive: true });
+
+    mobileToggle?.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
     });
 
-    document.querySelectorAll('.nav-links a').forEach((link) => {
-      link.addEventListener('click', () => {
-        nav.classList.remove('open');
-        menuToggle.textContent = '☰';
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.14 });
+
+    revealItems.forEach((item) => observer.observe(item));
+
+    faqItems.forEach((item) => {
+      item.addEventListener('click', () => {
+        faqItems.forEach((faq) => faq.classList.remove('open'));
+        item.classList.add('open');
       });
     });
 
-    filterButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        const filter = button.dataset.filter;
-        filterButtons.forEach((btn) => btn.classList.remove('active'));
-        button.classList.add('active');
-        menuItems.forEach((item) => {
-          item.classList.toggle('hidden', filter !== 'all' && item.dataset.category !== filter);
-        });
-      });
+    function showQuote(index) {
+      quoteCards.forEach((card) => card.classList.remove('active'));
+      quoteCards[index].classList.add('active');
+    }
+
+    nextQuote?.addEventListener('click', () => {
+      quoteIndex = (quoteIndex + 1) % quoteCards.length;
+      showQuote(quoteIndex);
     });
+
+    prevQuote?.addEventListener('click', () => {
+      quoteIndex = (quoteIndex - 1 + quoteCards.length) % quoteCards.length;
+      showQuote(quoteIndex);
+    });
+
   </script>
 </body>
 </html>
