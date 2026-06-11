@@ -1,0 +1,17 @@
+{
+  "name": "Ryoku Cafe Bangkok",
+  "short_name": "Ryoku",
+  "description": "Japanese-Western garden house cafe in Sukhumvit 35, Bangkok.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#f8f7f3",
+  "icons": [
+    {
+      "src": "assets/ryoku-logo.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+ftp_deploy.py
+ftp_log.txt
+*.py
+__pycache__/
+.vercel/
