@@ -437,7 +437,7 @@
       isolation: isolate;
     }
 
-    .hero-media img:not(.hero-logo-overlay) {
+    .hero-media img {
       height: 100%;
       min-height: inherit;
       transform: scale(1.06);
@@ -902,27 +902,7 @@
       object-fit: contain;
     }
 
-    .hero-logo-overlay {
-      position: absolute;
-      bottom: 32px;
-      left: 50%;
-      transform: translateX(-50%);
-      height: 110px;
-      width: auto;
-      pointer-events: none;
-      z-index: 2;
-      padding: 18px 32px;
-      background: rgba(255, 253, 248, 0.92);
-      border-radius: 100px;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-    }
-
     body[data-theme="night"] .footer-logo-img { filter: invert(1); }
-    body[data-theme="night"] .hero-logo-overlay {
-      background: rgba(18, 22, 16, 0.88);
-      filter: invert(1);
-    }
 
     .footer-col h4 {
       margin: 0 0 16px;
@@ -1048,7 +1028,7 @@
         margin-left: calc(50% - 50vw);
         border-radius: 30px;
       }
-      .hero-media img:not(.hero-logo-overlay) {
+      .hero-media img {
         transform: scale(1.01);
         object-position: center center;
       }
@@ -1136,7 +1116,6 @@
       </div>
       <figure class="hero-media">
         <img src="ryokuphotos2/hero.jpeg" alt="Ryoku Cafe white garden house exterior" fetchpriority="high" loading="eager" />
-        <img src="assets/ryoku-logo.png" class="hero-logo-overlay" alt="" aria-hidden="true" />
       </figure>
     </section>
 
