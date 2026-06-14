@@ -539,6 +539,12 @@
       font-size: 0.78rem;
     }
 
+    html[lang="th"] .eyebrow,
+    html[lang="th"] .footer-col h3,
+    html[lang="th"] .lang-tab {
+      letter-spacing: 0;
+    }
+
     .section-copy {
       margin: 0;
       color: var(--muted);
@@ -942,10 +948,25 @@
       .site-nav {
         position: fixed;
       }
+      .nav-actions {
+        margin-left: auto;
+        padding-right: 58px;
+      }
+      .theme-toggle {
+        position: absolute;
+        right: 64px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+      }
       .nav-links { display: none; }
       .mobile-toggle {
         display: grid;
         flex: 0 0 44px;
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
         place-items: center;
         width: 44px;
         min-width: 44px;
@@ -1214,7 +1235,7 @@
           <p data-i18n="why_card_2_copy">Visit for brunch, souffle pancakes and afternoon coffee near BTS Phrom Phong.</p>
         </article>
         <figure class="why-card why-photo reveal">
-          <img src="ryokuphotos2/image12.jpeg" alt="Ryoku Cafe dining room with white curtains and natural light" />
+          <img src="ryokuphotos/image14.jpeg" alt="Ryoku Cafe interior with warm wood tables and display shelves" />
         </figure>
       </div>
     </section>
@@ -1229,15 +1250,15 @@
       </div>
       <div class="photo-gallery">
         <figure class="gallery-tile tall reveal"><img src="ryokuphotos2/image10.jpeg" alt="Ryoku Cafe garden terrace" /></figure>
-        <figure class="gallery-tile reveal"><img src="ryokuphotos2/image9.jpeg" alt="Ryoku Cafe entrance and front path" /></figure>
+        <figure class="gallery-tile reveal"><img src="ryokuphotos/image15.jpeg" alt="Ryoku Cafe exterior with logo over the white facade" /></figure>
         <figure class="gallery-tile reveal"><img src="ryokuphotos2/image1.jpeg" alt="Ryoku Cafe garden seating" /></figure>
         <figure class="gallery-tile reveal"><img src="ryokuphotos2/image11.jpeg" alt="Ryoku Cafe floral window display" /></figure>
-        <figure class="gallery-tile wide reveal"><img src="ryokuphotos2/image8.jpeg" alt="Guests enjoying Ryoku Cafe" /></figure>
+        <figure class="gallery-tile wide reveal"><img src="ryokuphotos2/image13.jpeg" alt="Ryoku Cafe illustrated scene with desserts and flowers" /></figure>
         <figure class="gallery-tile reveal"><img src="ryokuphotos2/image2.jpeg" alt="Ryoku pasta dish" /></figure>
         <figure class="gallery-tile reveal"><img src="ryokuphotos2/image3.jpeg" alt="Ryoku plated brunch and pancake spread" /></figure>
-        <figure class="gallery-tile reveal"><img src="ryokuphotos2/image7.jpeg" alt="Ryoku pumpkin soup" /></figure>
+        <figure class="gallery-tile reveal"><img src="ryokuphotos/image17.jpeg" alt="Ryoku seasonal pink refresher being poured over ice" /></figure>
         <figure class="gallery-tile reveal"><img src="assets/toast-dessert.jpg" alt="Parma melon toast" /></figure>
-        <figure class="gallery-tile wide reveal"><img src="ryokuphotos2/image12.jpeg" alt="Ryoku Cafe dining room with natural light" /></figure>
+        <figure class="gallery-tile wide reveal"><img src="ryokuphotos/image18.jpeg" alt="Ryoku Cafe flower-lined window with garden view" /></figure>
       </div>
     </section>
 
@@ -1284,7 +1305,7 @@
           <div class="journal-body"><h3 data-i18n="journal_1_title">Why souffle pancakes feel different</h3><p data-i18n="journal_1_copy">Ryoku's pancakes are served tall and tender, with cream and fruit adding contrast instead of heaviness. They are best enjoyed fresh from the kitchen.</p><small data-i18n="journal_by">by Ryoku</small></div>
         </article>
         <article class="journal-card reveal">
-          <figure><img src="ryokuphotos2/image12.jpeg" alt="Ryoku Cafe interior with white curtains and tables" /><img src="ryokuphotos2/image1.jpeg" alt="Ryoku garden seating near the house exterior" /></figure>
+          <figure><img src="ryokuphotos/image16.jpeg" alt="Ryoku lounge corner with black-framed windows and wood seating" /><img src="ryokuphotos2/image1.jpeg" alt="Ryoku garden seating near the house exterior" /></figure>
           <div class="journal-body"><h3 data-i18n="journal_2_title">A renovated house in Sukhumvit 35</h3><p data-i18n="journal_2_copy">The cafe sits in a two-floor white house with garden seating, glass windows and soft curtains. It is close to BTS Phrom Phong, so it works for both planned brunch and quick coffee.</p><small data-i18n="journal_by">by Ryoku</small></div>
         </article>
         <article class="journal-card reveal">
@@ -1572,7 +1593,7 @@ const translations = {
             "nav_about": "เกี่ยวกับเรา",
             "nav_visit": "ข้อมูลสาขา",
             "nav_call": "โทรหา Ryoku",
-            "hero_kicker": "พื้นที่คาเฟ่ในบ้านสวนย่านสุขุมวิทที่สว่าง สงบ และละเมียดละไม เหมาะสำหรับซูเฟล่แพนเค้ก บรันช์ และช่วงเวลาพักผ่อนอย่างเรียบง่าย",
+            "hero_kicker": "คาเฟ่ในบ้านสวนย่านสุขุมวิทที่สว่าง สงบ และละเมียดละไม เหมาะสำหรับซูเฟล่แพนเค้ก บรันช์ และช่วงเวลาพักผ่อนอย่างเรียบง่าย",
             "hero_visit": "เยี่ยมชมคาเฟ่",
             "intro_title": "ออกแบบเพื่อเช้าที่ผ่อนคลาย และบ่ายที่เรียบสงบ",
             "intro_lovers": "สำหรับผู้ที่ชื่นชอบบรันช์ในกรุงเทพฯ",
