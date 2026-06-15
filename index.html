@@ -4,19 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ryoku Cafe Bangkok - Japanese Brunch & Souffle Pancakes in Sukhumvit</title>
-  <meta name="description" content="Ryoku Cafe is a Japanese cafe in Sukhumvit, Bangkok serving souffle pancakes, brunch, breakfast, matcha, and coffee near BTS Phrom Phong, EmQuartier, and Sukhumvit 35." />
+  <meta name="description" content="Ryoku Cafe is a Japanese cafe in Watthana, Sukhumvit, Bangkok serving souffle pancakes, brunch, breakfast, matcha, and coffee near BTS Phrom Phong, EmQuartier, Emporium, Benchasiri Park, and Sukhumvit 35." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://ryokucafe.com/" />
   <meta name="theme-color" content="#f8f7f3" />
   <meta property="og:title" content="Ryoku Cafe Bangkok - Japanese Brunch & Souffle Pancakes in Sukhumvit" />
-  <meta property="og:description" content="Ryoku Cafe is a Japanese brunch cafe in Sukhumvit, Bangkok for souffle pancakes, breakfast, matcha, and coffee near BTS Phrom Phong and EmQuartier." />
+  <meta property="og:description" content="Ryoku Cafe is a Japanese brunch cafe in Watthana, Sukhumvit, Bangkok for souffle pancakes, breakfast, matcha, and coffee near BTS Phrom Phong, EmQuartier, Emporium, and Benchasiri Park." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://ryokucafe.com/" />
   <meta property="og:image" content="https://ryokucafe.com/ryokuphotos2/hero.jpeg" />
   <meta property="og:image:alt" content="Ryoku Cafe Bangkok white garden house exterior" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Ryoku Cafe Bangkok - Japanese Brunch & Souffle Pancakes in Sukhumvit" />
-  <meta name="twitter:description" content="Ryoku Cafe is a Japanese brunch cafe in Sukhumvit, Bangkok for souffle pancakes, breakfast, matcha, and coffee near BTS Phrom Phong and EmQuartier." />
+  <meta name="twitter:description" content="Ryoku Cafe is a Japanese brunch cafe in Watthana, Sukhumvit, Bangkok for souffle pancakes, breakfast, matcha, and coffee near BTS Phrom Phong, EmQuartier, Emporium, and Benchasiri Park." />
   <meta name="twitter:image" content="https://ryokucafe.com/ryokuphotos2/hero.jpeg" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2310100f'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-size='34' fill='%23fffdf8'%3E%E2%9C%A4%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,7 +31,7 @@
           "@id": "https://ryokucafe.com/#cafe",
           "name": "Ryoku Cafe",
           "alternateName": "Ryoku Cafe Bangkok",
-          "description": "Japanese cafe in Sukhumvit 35, Bangkok serving souffle pancakes, brunch, matcha, coffee, and garden house cafe moments near BTS Phrom Phong and EmQuartier.",
+          "description": "Japanese cafe in Watthana, Sukhumvit 35, Bangkok serving souffle pancakes, brunch, matcha, coffee, and garden house cafe moments near BTS Phrom Phong, EmQuartier, Emporium, and Benchasiri Park.",
           "url": "https://ryokucafe.com/",
           "image": [
             "https://ryokucafe.com/ryokuphotos2/hero.jpeg",
@@ -180,7 +180,7 @@
               "name": "Where is the cafe?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Ryoku Cafe is at 28 Sukhumvit 35, Bangkok, Thailand, near BTS Phrom Phong and a short ride from EmQuartier."
+                "text": "Ryoku Cafe is at 28 Sukhumvit 35 Alley, Khlong Tan Nuea, Watthana, Bangkok 10110, Thailand, near BTS Phrom Phong, EmQuartier, Emporium, and Benchasiri Park."
               }
             },
             {
@@ -451,6 +451,39 @@
       gap: 8px;
     }
 
+    .lang-select-wrap {
+      display: none;
+      position: relative;
+    }
+
+    .lang-select {
+      min-width: 96px;
+      min-height: 44px;
+      padding: 0 36px 0 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--ink);
+      font-weight: 900;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      box-shadow: 0 12px 30px rgba(16, 16, 15, 0.08);
+      appearance: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+    }
+
+    .lang-select-wrap::after {
+      content: "\25BE";
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      font-size: 0.72rem;
+      pointer-events: none;
+    }
+
     .lang-tabs {
       display: inline-flex;
       align-items: center;
@@ -526,8 +559,27 @@
     }
 
     .hero h1 {
-      font-size: clamp(3.1rem, 6.7vw, 6.8rem);
-      max-width: 620px;
+      max-width: 760px;
+      text-transform: none;
+      letter-spacing: -0.045em;
+      line-height: 0.92;
+    }
+
+    .hero-name {
+      display: block;
+      font-size: clamp(2.6rem, 5.2vw, 5.1rem);
+    }
+
+    .hero-subline {
+      display: block;
+      margin-top: 14px;
+      max-width: 28ch;
+      color: var(--muted);
+      font-family: Inter, "Noto Sans Thai", system-ui, sans-serif;
+      font-size: clamp(0.96rem, 1.45vw, 1.18rem);
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      line-height: 1.35;
     }
 
     html[lang="ja"] .section-title,
@@ -544,6 +596,13 @@
     html[lang="th"] .visit-title {
       letter-spacing: 0;
       line-height: 1.12;
+    }
+
+    html[lang="th"] .hero-subline,
+    html[lang="ja"] .hero-subline,
+    html[lang="zh"] .hero-subline {
+      letter-spacing: 0;
+      line-height: 1.5;
     }
 
     .hero-kicker {
@@ -1153,7 +1212,7 @@
       }
       .nav-actions {
         margin-left: auto;
-        padding-right: 58px;
+        padding-right: 104px;
       }
       .theme-toggle {
         position: absolute;
@@ -1192,7 +1251,8 @@
         border-radius: 26px;
         background: var(--surface);
       }
-      .desktop-lang { display: inline-flex; }
+      .desktop-lang { display: none; }
+      .lang-select-wrap { display: inline-flex; }
       .hero-top,
       .intro,
       .section-head,
@@ -1215,7 +1275,13 @@
       .page-shell,
       .site-nav { width: min(100% - 26px, var(--max)); }
       .hero { padding-top: 100px; }
-      .hero h1 { font-size: clamp(2.8rem, 13vw, 4.3rem); }
+      .hero-name { font-size: clamp(1.82rem, 8.9vw, 3.02rem); }
+      .hero-subline {
+        margin-top: 8px;
+        max-width: 100%;
+        font-size: clamp(0.8rem, 3.2vw, 0.94rem);
+        line-height: 1.42;
+      }
       .hero-media {
         width: 100vw;
         min-height: min(74vh, 560px);
@@ -1258,6 +1324,7 @@
       .roll-link,
       .text-link,
       .action-link,
+      .lang-select,
       .lang-tab,
       .theme-toggle,
       .mobile-toggle {
@@ -1304,8 +1371,16 @@
           <button class="lang-tab" type="button" data-lang="en">EN</button>
           <button class="lang-tab" type="button" data-lang="th">TH</button>
           <button class="lang-tab" type="button" data-lang="ja">JP</button>
-          <button class="lang-tab" type="button" data-lang="zh">CN</button>
+          <button class="lang-tab" type="button" data-lang="zh" aria-label="Chinese">ZH</button>
         </div>
+      </div>
+      <div class="lang-select-wrap" aria-label="Language selector">
+        <select class="lang-select" id="langSelect">
+          <option value="en">EN</option>
+          <option value="th">TH</option>
+          <option value="ja">JP</option>
+          <option value="zh">ZH</option>
+        </select>
       </div>
       <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to night mode">☾</button>
     </div>
@@ -1316,7 +1391,7 @@
     <section class="hero page-shell">
       <div class="hero-top">
         <div>
-          <h1 data-i18n="hero_title">Ryoku Cafe Bangkok &mdash; Japanese Brunch &amp; Souffle Pancakes in Sukhumvit</h1>
+          <h1 data-i18n-html="hero_title_html"><span class="hero-name">Ryoku Cafe</span><span class="hero-subline">Bangkok - Japanese Brunch &amp; Souffle Pancakes in Sukhumvit</span></h1>
           <p class="hero-kicker" data-i18n="hero_kicker">A bright Japanese cafe in Sukhumvit, Bangkok for souffle pancakes, brunch, breakfast, matcha and quiet coffee near BTS Phrom Phong.</p>
         </div>
         <div>
@@ -1671,6 +1746,7 @@
     const prevQuote = document.getElementById('prevQuote');
     const themeToggle = document.getElementById('themeToggle');
     const langButtons = document.querySelectorAll('[data-lang]');
+    const langSelect = document.getElementById('langSelect');
     let quoteIndex = 0;
 
 const translations = {
@@ -1681,8 +1757,9 @@ const translations = {
             "nav_visit": "Visit us",
             "nav_call": "Call Ryoku",
             "hero_title": "Ryoku Cafe Bangkok — Japanese Brunch & Souffle Pancakes in Sukhumvit",
+            "hero_title_html": "<span class=\"hero-name\">Ryoku Cafe</span><span class=\"hero-subline\">Bangkok - Japanese Brunch &amp; Souffle Pancakes in Sukhumvit</span>",
             "hero_plan": "Plan your visit",
-            "hero_kicker": "A bright Japanese cafe in Sukhumvit, Bangkok for souffle pancakes, brunch, breakfast, matcha and quiet coffee near BTS Phrom Phong.",
+            "hero_kicker": "A bright Japanese cafe in Watthana, Sukhumvit, Bangkok for souffle pancakes, brunch, breakfast, matcha and quiet coffee near BTS Phrom Phong, EmQuartier, Emporium and Benchasiri Park.",
             "hero_visit": "Visit the Cafe",
             "intro_title": "Made for relaxed mornings and quiet afternoons",
             "intro_lovers": "Bangkok brunch lovers",
@@ -1694,7 +1771,7 @@ const translations = {
             "mini_3_copy": "A renovated two-floor white house near BTS Phrom Phong.",
             "products_eyebrow": "Our favorites",
             "products_title": "A few of Ryoku's most loved orders.",
-            "products_copy": "Sweet, savory and refreshing favorites from a Sukhumvit brunch and cafe menu built around pancakes, coffee, matcha and lighter breakfast plates.",
+            "products_copy": "Sweet, savory and refreshing favorites from a Watthana brunch and cafe menu built around pancakes, coffee, matcha and lighter breakfast plates near EmQuartier, Emporium and Benchasiri Park.",
             "product_1_title": "Ryoku's Premium",
             "product_1_copy": "Souffle pancakes with cream, fruit and a refined Ryoku finish.",
             "product_1_tags": "Signature Souffle฿339",
@@ -1713,7 +1790,7 @@ const translations = {
             "why_card_2_copy": "Visit for brunch, souffle pancakes and afternoon coffee near BTS Phrom Phong.",
             "photos_eyebrow": "Photos",
             "photos_title": "Windows, plates and bright corners.",
-            "photos_copy": "A look inside one of the calmer cafes in Bangkok and Sukhumvit: bright interiors, plated brunch, souffle pancakes, coffee, matcha and seasonal dishes.",
+            "photos_copy": "A look inside one of the calmer cafes in Bangkok and Sukhumvit: bright interiors, plated brunch, souffle pancakes, coffee, matcha and seasonal dishes near EmQuartier, Emporium and Benchasiri Park.",
             "menu_eyebrow": "Menu preview",
             "menu_title": "Start with the dishes guests ask about most.",
             "menu_copy": "A quick first-order guide for brunch, coffee and lighter afternoon visits.",
@@ -1728,7 +1805,7 @@ const translations = {
             "menu_note": "For the current daily selection, message LINE @ryokucafe or check the latest dishes on Instagram before heading over.",
             "journal_eyebrow": "Journal",
             "journal_title": "Stories from the garden house.",
-            "journal_copy": "A quick read on what to order, when to come, and why Ryoku works for brunch in Bangkok, breakfast in Sukhumvit and coffee near EmQuartier.",
+            "journal_copy": "A quick read on what to order, when to come, and why Ryoku works for brunch in Bangkok, breakfast in Sukhumvit and coffee near EmQuartier, Emporium and Benchasiri Park.",
             "journal_1_title": "Why souffle pancakes feel different",
             "journal_1_copy": "Ryoku's pancakes are served tall and tender, with cream and fruit adding contrast instead of heaviness. They are best enjoyed fresh from the kitchen.",
             "journal_2_title": "A renovated house in Sukhumvit 35",
@@ -1740,7 +1817,7 @@ const translations = {
             "journal_by": "by Ryoku",
             "visit_title": "Visit us",
             "visit_address": "28 Sukhumvit 35, Bangkok, Thailand",
-            "visit_hours": "Open daily, 08:00 - 20:00. Near BTS Phrom Phong and a short ride from EmQuartier in Sukhumvit 35, Bangkok.",
+            "visit_hours": "Open daily, 08:00 - 20:00. Near BTS Phrom Phong, EmQuartier, Emporium and Benchasiri Park in Watthana, Sukhumvit 35, Bangkok.",
             "visit_directions": "Get directions",
             "proof_eyebrow": "Guest proof",
             "proof_title": "Check recent guest photos and comments before you visit.",
@@ -1772,7 +1849,7 @@ const translations = {
             "faq_1_q": "What is Ryoku known for?",
             "faq_1_a": "Ryoku is known for Osaka-style souffle pancakes, Japanese-Western brunch, matcha, coffee and its calm garden house setting in Sukhumvit.",
             "faq_2_q": "Where is the cafe?",
-            "faq_2_a": "Ryoku Cafe is at 28 Sukhumvit 35, Bangkok, near BTS Phrom Phong and close to EmQuartier.",
+            "faq_2_a": "Ryoku Cafe is at 28 Sukhumvit 35 Alley, Khlong Tan Nuea, Watthana, Bangkok, near BTS Phrom Phong, EmQuartier, Emporium and Benchasiri Park.",
             "faq_3_q": "What are the opening hours?",
             "faq_3_a": "The cafe is open daily from 08:00 to 20:00.",
             "faq_4_q": "Can I call ahead?",
@@ -1964,6 +2041,7 @@ const translations = {
             "nav_about": "关于我们",
             "nav_visit": "到店信息",
             "nav_call": "致电 Ryoku",
+            "hero_title_html": "<span class=\"hero-name\">Ryoku Cafe</span><span class=\"hero-subline\">&#26364;&#35895;&#32072;&#36896;&#30340;&#26085;&#24335;&#26089;&#21320;&#39184;&#19982;&#33298;&#33433;&#34174;&#26494;&#39292;</span>",
             "hero_kicker": "位于素坤逸的花园小屋，明亮、宁静且细节精致，适合享用舒芙蕾松饼、早午餐，以及从容的咖啡时光。",
             "hero_visit": "到店体验",
             "intro_title": "为悠闲的清晨与安静的午后而设。",
@@ -2157,6 +2235,10 @@ const translations = {
         ...(sectionOverrides[lang] || {})
       };
       document.documentElement.lang = lang;
+      document.querySelectorAll('[data-i18n-html]').forEach((node) => {
+        const key = node.dataset.i18nHtml;
+        if (dictionary[key]) node.innerHTML = dictionary[key];
+      });
       document.querySelectorAll('[data-i18n]').forEach((node) => {
         const key = node.dataset.i18n;
         if (dictionary[key]) node.textContent = dictionary[key];
@@ -2167,6 +2249,9 @@ const translations = {
         button.setAttribute('aria-pressed', String(isActive));
         button.toggleAttribute('aria-current', isActive);
       });
+      if (langSelect) {
+        langSelect.value = lang;
+      }
       localStorage.setItem('ryoku-lang', lang);
     }
 
@@ -2187,6 +2272,11 @@ const translations = {
         navLinks.classList.remove('open');
         mobileToggle?.setAttribute('aria-expanded', 'false');
       });
+    });
+    langSelect?.addEventListener('change', (event) => {
+      setLanguage(event.target.value);
+      navLinks.classList.remove('open');
+      mobileToggle?.setAttribute('aria-expanded', 'false');
     });
 
     themeToggle?.addEventListener('click', () => {
